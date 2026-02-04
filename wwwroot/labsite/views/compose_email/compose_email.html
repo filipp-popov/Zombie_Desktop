@@ -1,0 +1,33 @@
+<ul class="nav">
+	<li><a href="#/z_creation">{{"vaccine_creation" | localized}}:</a></li>
+	<li class="active"><a href="">{{"email" | localized}}:</a></li>
+</ul>
+<div class="col-2">
+	<div class="same-height">
+		<div class="side-nav">
+			<ul>
+				<li class="compose">
+					<!--<a href="#/compose_email" class="ui green button">-->
+						<!--{{"compose_email" | localized}}-->
+					<!--</a>-->
+				</li>
+				<li class="bold"><a href="#/email">{{"inbox" | localized}} <span ng-if="vm.getUnreadEmails()">({{vm.getUnreadEmails()}})</span></a></li>
+				<li class="active"><a href="#/sent_emails">{{"sent_emails:caption" | localized}}</a></li>
+			</ul>
+		</div>
+		<div class="content">
+			<h2>{{"compose:email:caption" | localized}}</h2>
+			<form class="new-leter">
+				<p>{{"email_to" | localized}}</p>
+				<select ng-model="vm.email.to">
+					<option selected disabled hidden value=''></option>
+					<option ng-repeat="address in vm.getAddresses()" ng-value="address" ng-bind-html="address | unsafe"></option>
+				</select>
+				<p>{{"email_subject" | localized}}</p>
+				<input ng-model="vm.email.title" type="text" />
+				<textarea ng-model="vm.email.text"></textarea>
+				<input type="submit" value="Send" ng-click="vm.submit(vm.email)" class="btn">
+			</form>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,39 @@
+<div class="content videos" ng-if="!supressVideos()">
+	<table class="ui celled striped table">
+		<tbody>
+		<tr>
+			<td class="selectable">
+				<embed-video-component url="{{urls[0]}}" selected="isVideoSelected(0)" ng-click="selectCamera(0)"/>
+			</td>
+			<td class="selectable">
+				<embed-video-component url="{{urls[1]}}" selected="isVideoSelected(1)" ng-click="selectCamera(1)"/>
+			</td>
+			<td class="selectable">
+				<embed-video-component url="{{urls[2]}}" selected="isVideoSelected(2)" ng-click="selectCamera(2)"/>
+			</td>
+		</tr>
+		<tr>
+			<td class="selectable">
+				<embed-video-component url="{{urls[3]}}" selected="isVideoSelected(3)" ng-click="selectCamera(3)"/>
+			</td>
+			<td class="selectable">
+				<embed-video-component url="{{urls[4]}}" selected="isVideoSelected(4)" ng-click="selectCamera(4)"/>
+			</td>
+			<td class="selectable">
+				<embed-video-component url="{{urls[5]}}" selected="isVideoSelected(5)" ng-click="selectCamera(5)"/>
+			</td>
+		</tr>
+		<tr>
+			<td class="selectable">
+				<embed-video-component url="{{urls[6]}}" selected="isVideoSelected(6)" ng-click="selectCamera(6)"/>
+			</td>
+			<td class="selectable">
+				<embed-video-component url="{{urls[7]}}" selected="isVideoSelected(7)" ng-click="selectCamera(7)"/>
+			</td>
+			<td class="selectable">
+				<embed-video-component url="{{urls[8]}}" selected="isVideoSelected(8)" ng-click="selectCamera(8)"/>
+			</td>
+		</tr>
+		</tbody>
+	</table>
+</div>

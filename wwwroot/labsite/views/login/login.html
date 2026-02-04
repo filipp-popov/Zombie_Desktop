@@ -1,0 +1,96 @@
+<div class="ui middle aligned center aligned grid">
+  <div class="column">
+    <h2 class="ui teal image header">
+      <div class="content">
+        {{"login:login_caption" | localized}}        
+      </div>
+    </h2>
+    <form class="ui medium form" ng-submit="submit(password)">
+
+      <div class="ui link cards centered" click-outside="clickOutside()">
+
+        <div class="card" ng-click="selectUser('new',$event)">
+          <div class="image">
+            <img src="img/avatar/unknown.jpg">
+          </div>
+          <div class="content" ng-if="!isSelectedUser('new')">
+            <div class="header">{{"login:new_user" | localized}}</div>
+            <div class="meta">
+              <a></a>
+            </div>
+            <div class="description">
+            </div>
+          </div>
+
+          <div class="content" ng-if="isSelectedUser('new')">
+            <div class="description">
+              <div class="stacked">
+                <div class="field">
+                  <div class="ui left icon input" ng-class="{'disabled': loading}">
+                    <i class="user icon"></i>
+                    <input type="text" ng-model="login" placeholder="{{'login:login_tooltip' | localized}}" autofocus>
+                  </div>
+                </div>
+                <div class="field">
+                  <div class="ui left icon input" ng-class="{'disabled': loading}">
+                    <i class="lock icon"></i>
+                    <input type="password" ng-keyup="$event.keyCode === 13 && submit(login, password)" name="password"
+                           ng-model="password" placeholder="{{'login:password_tooltip' | localized}}">
+                  </div>
+                  <!--<i class="circular heart icon link" data-content="Hello. This is an inverted popup" data-variation="inverted"></i>-->
+                </div>
+                <div class="ui large teal submit button right floated" ng-click="submit(login, password)" ng-class="{'loading': loading}">{{"login:login" | localized}}</div>
+              </div>
+              <div class="ui error message" style="color:red" ng-show="hasLoginError">{{"login:error" | localized}}</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" ng-click="selectUser('alex',$event)">
+          <div class="image">
+            <img src="img/avatar/steve.jpg">
+          </div>
+          <div class="content" ng-if="!isSelectedUser('alex')">
+            <div class="header">{{"professor_name" | localized}}</div>
+            <div class="meta">
+              <span class="date">{{"login:stuff" | localized}}</span>
+            </div>
+            <div class="description">
+              {{"login:description" | localized}}
+            </div>
+          </div>
+
+          <div class="content" ng-if="isSelectedUser('alex')">
+            <div class="description">
+
+              <div class="stacked">
+                <div class="field">
+                  <div class="ui left icon input disabled" style="cursor: not-allowed;">
+                    <i class="user icon"></i>
+                    <input type="text" value="aschwartz" placeholder="{{'login:login_tooltip' | localized}}">
+                  </div>
+                </div>
+                <div class="field">
+                  <div class="ui left icon input" ng-class="{'disabled': loading}">
+                    <i class="lock icon"></i>
+                    <input type="password" ng-keyup="$event.keyCode === 13 && submit('aschwartz', password)" name="password"
+                           id="password"
+                           ng-model="password" placeholder="{{'login:password_tooltip' | localized}}"
+                           autofocus
+                           data-content="{{'login:password_hint' | localized}}"
+                           data-ng-init="init()"
+                    >
+                  </div>
+                </div>
+                <div class="ui large teal submit button right floated" ng-click="submit('aschwartz', password)" ng-class="{'loading': loading}">{{"login:login" | localized}}</div>
+              </div>
+
+              <div class="ui error message" style="color:red" ng-show="hasLoginError">{{"login:error" | localized}}</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

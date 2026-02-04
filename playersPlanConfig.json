@@ -1,0 +1,106 @@
+{
+	"cellWidth": 40,
+	"cellHeight": 40,
+	"cells" : [
+	],															  
+	"fans" : [],
+	"switchers": [
+		{
+					"id": 0,
+                    "name": "outerRoom",                      
+					"isActive" : false,
+					"leftTop" : [0, 0],
+					"bottomRight" : [14, 13],
+					"leverCoordRelative" : null
+		},
+		{
+					"id": 1,
+                    "name": "top left room",
+					"isActive" : false,
+					"leftTop" : [0, 0],
+					"bottomRight" : [4, 5],
+					"leverCoordRelative" : [0, 0]
+		},
+		{
+					"id": 2,
+                    "name": "top center room",                    
+					"isActive" : false,
+					"leftTop" : [5, 0],
+					"bottomRight" : [9, 5],
+					"leverCoordRelative" : [0, 0]
+		},
+		{
+					"id": 3,
+                    "name": "top right room",                      
+					"isActive" : false,
+					"leftTop" : [10, 0],
+					"bottomRight" : [14, 5],
+					"leverCoordRelative" : [0, 0]
+		},
+		{
+					"id": 4,
+                    "name": "top coridor",                      
+					"isActive" : false,
+					"leftTop" : [0, 6],
+					"bottomRight" : [14, 8],
+                    "noOwnWalls": true,
+					"leverCoordRelative" : null
+		},
+		{
+					"id": 5,
+                    "name": "bottom left room",                      
+					"isActive" : false,
+					"leftTop" : [0, 9],
+					"bottomRight" : [2, 13],
+					"leverCoordRelative" : [0, 0]
+		},
+		{
+					"id": 6,
+                    "name": "coridor on the left of players left long part",                      
+					"isActive" : false,
+					"leftTop" : [3, 9],
+					"bottomRight" : [4, 13],
+					"leverCoordRelative" : null,
+                    "noOwnWalls": true
+		},
+		{
+					"id": 8,
+                    "name": "lab - professor room",
+                    "rightLinkedId": 9, 
+                    "isPlayersRoom": true,                      
+					"isActive" : false,
+					"leftTop" : [5, 9],
+					"bottomRight" : [7, 13],
+					"leverCoordRelative" : [0, 0]
+		},
+		{
+					"id": 9,
+                    "name": "lab - laboratory room",
+                    "leftLinkedId": 8, 
+                    "isPlayersRoom": true,                                              
+					"isActive" : false,
+					"leftTop" : [8, 9],
+					"bottomRight" : [10, 13],
+					"leverCoordRelative" : [0, 0]
+		},
+		{
+					"id": 10,
+                    "name": "coridor on the right of lab",                      
+					"isActive" : false,
+					"leftTop" : [11, 9],
+					"bottomRight" : [12, 13],
+					"leverCoordRelative" : null,
+                    "noOwnWalls": true
+		},
+		{
+					"id": 11,
+                    "name": "bottom right room",                      
+					"isActive" : false,
+					"leftTop" : [13, 9],
+					"bottomRight" : [14, 13],
+					"leverCoordRelative" : [0, 0]
+		}       
+	],
+	"lighters": []
+																	
+}

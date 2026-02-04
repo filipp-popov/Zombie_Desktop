@@ -1,0 +1,36 @@
+<div class="ui fluid two item top attached tabular menu blue">
+    <a class="item" data-tab="first" href="#/cameras">{{"cameras:video_monitoring" | localized}}</a>
+    <a class="item active" data-tab="second" href="#/plans">{{"cameras:plans" | localized}}</a>
+</div>
+<div class="ui bottom attached tab segment active plan-floor" data-tab="second" style="min-height: 800px">
+
+    <div class="ui fluid big action input">
+        <input type="text" placeholder="please enter floor number..." ng-model="planNumber" ng-keyup="$event.keyCode === 13 && ctrl.showPlan(planNumber)">
+        <div class="ui button" ng-click="ctrl.showPlan(planNumber)">{{'plans:show_plan' | localized}}</div> <br/>
+    </div>
+    <div class="ui pointing red basic label" ng-style="{'visibility': ctrl.isError ? 'visible' : 'hidden' }">
+    {{'plans:not_found' | localized}}
+    </div>
+
+    <h1 class="ui center aligned  header" >{{'plans:header_plan' | localized}} <span class="blue">{{ctrl.selectedPlanNumber}}</span> </h1>
+
+    <div style="position: absolute" id="planContainer">
+        <span ng-repeat="switcher in ctrl.plan.switchers" data-is-plans="true" room-with-switched-sector="switcher" data-cell-height="ctrl.sizes.cellHeight"
+        data-cell-width="ctrl.sizes.cellWidth">
+        </span>
+
+        <span ng-repeat="sonarObject in switcher.sonarObjects" data-room-left-top="switcher.leftTop" data-room-right-bottom="switcher.bottomRight"
+        data-sonar-object="sonarObject" data-cell-height="ctrl.sizes.cellHeight" data-cell-width="ctrl.sizes.cellWidth">
+        </span>
+    </div>
+
+    <div class="standard-plan-description">
+        <h5 class="ui header">
+            {{'plans:detector_deactivated_header' | localized}}
+            <div class="sub header">
+                {{'plans:detector_deactivated_description' | localized}}
+            </div>
+        </h5>
+    </div>
+
+</div>

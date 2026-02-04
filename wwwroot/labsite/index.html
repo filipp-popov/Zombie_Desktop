@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>My AngularJS App</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="../common/app.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" href="libs/semantic/semantic.min.css" />
+</head>
+
+<body class="vacine">
+    <div class="wrap">
+        <header>
+            <div class="logo-div">
+                <img src="img/biohazard.png" height="50">
+            </div>
+            <!--<div class="address">Saint Petersburg
+        <br>Nevsky
+        <br>+79215638474</div>-->
+        </header>
+        <div ng-view class="vacine-view"></div>
+        <div ng-include="'views/cameras/cameras.html'" ng-controller="labCamerasCtrl" ng-style="{'display': (isVisible() ? 'block' : 'none') }"
+        class="camera-view"></div>
+
+    </div>
+    <div events-listener></div>
+    <script src="../common/libs/jquery-2.1.3.min.js"></script>
+    <script src="libs/semantic/semantic.min.js"></script>
+    <script src="../common/libs/moment.js"></script>
+    <script src="../common/libs/socket.io-1.3.4.js"></script>
+    <script src="../common/libs/angular.min.js"></script>
+    <script src="../common/libs/angular-route.min.js"></script>
+    <script src="../common/libs/deferredbootstrapper.js"></script>
+    <script src="../common/libs/bootstrap/js/bootstrap.min.js"></script>
+    <script src="app.js"></script>
+    <script src="views/z_creation/z_creation.js"></script>
+    <script src="views/email/email.js"></script>
+    <script src="views/cameras/cameras.js"></script>
+    <script src="views/login/login.js"></script>
+    <script src="views/empty/empty.js"></script>
+    <script src="views/compose_email/compose_email.js"></script>
+    <script src="views/sent_emails/sent_emails.js"></script>
+    <script src="views/plans/plans.js"></script>
+    <script src="views/girl_escape/girl_escape.js"></script>
+    <script src="views/girl_escape/girl_escape_controller.js"></script>
+    <script src="components/embed-video.js"></script>
+    <script src="components/embed-video-component.js"></script>
+    <script src="components/localized-filter/localized.filter.js"></script>
+    <script src="components/sonar_object/sonar_object.js"></script>
+    <script src="components/pipe_sector/pipe_sector.js"></script>
+    <script src="components/room_with_switched_sector/room_with_switched_sector.js"></script>
+    <script src="services/zCreationService.js"></script>
+    <script src="services/labEmailService.js"></script>
+    <script src="services/girlEscapeRandomEvents.js"></script>    
+    <script src="services/objectBehaviorService.js"></script>        
+    <script src="../common/services/sendCommandService.js"></script>
+    <script src="../common/components/eventsListener/eventsListener.js"></script>
+    <script src="../common/components/autofocus/autofocus.js"></script>
+    <script src="../common/services/statePopulator.js"></script>
+
+    <script>
+        deferredBootstrapper.bootstrap({
+                  element: document.documentElement,
+                  module: 'myApp',
+                  bootstrapConfig: {
+                      strictDi: true
+                  },
+                  resolve: {
+                      config: [
+                          '$http',function ($http) {
+                              return $http.get('/config.json').then(function (result) {
+                                  return result.data;
+                              });
+                          }
+                      ],
+                      localizations: [
+                        '$http', '$q', function($http, $q) {
+                          return $q.all(['ru', 'en', 'es'].map(function(lang) {
+                            return $http.get('localization/localization.' + lang + '.json') 
+                          })).then(function(results){
+                            var localizations = {};
+                            results.forEach(function(result) {
+                              localizations[result.data.language] = result.data;
+                            });
+                            return localizations;
+                          });
+                        }
+                      ]
+                  }
+              });
+              
+
+        $(document).keypress(function (e) {
+            if ($(e.target).is('input, textarea')) {
+                return;
+            }
+            e.preventDefault();
+            e.cancelBubble = true;
+            return false;
+        });
+        
+        window.onpopstate = function (event) {
+            history.go(1);
+        };
+    </script>
+</body>
+
+</html>

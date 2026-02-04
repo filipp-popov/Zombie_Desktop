@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>My AngularJS App</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../common/app.css">
+  <link rel="stylesheet" href="../common/libs/bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+  <ul class="labmenu">
+  <li><a href="/milligan/admin">Зомби админ</a></li>    
+  <li><a href="#/main">Процесс игры Зомби</a></li>
+  <li><a href="#/alice">Процесс игры Алиса</a></li>
+	<li><a href="#/config">Конфигурация</a></li>
+	<li><a href="#/testRequests">Тест запросов</a></li>	
+	<li><a href="#/camera">Детектор людей / Лог запросов</a></li>	
+  </ul>
+
+  <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+
+  <div ng-view></div>
+
+  <div events-listener> </div>
+  
+  <script src="../common/libs/jquery-2.1.3.min.js"></script>
+  <script src="../common/libs/moment.js"> </script>
+  <script src="../common/libs/socket.io-1.3.4.js"></script>
+  <script src="../common/libs/angular.min.js"></script>
+  <script src="../common/libs/angular-route.min.js"></script>
+  <script src="../common/libs/deferredbootstrapper.js"></script> 
+  <script src="../common/libs/bootstrap/js/bootstrap.min.js"></script>   
+  
+  <script src="app.js"></script>
+  <script src="views/main/MainPage.js"></script>
+  <script src="views/config/configPage.js"></script>  
+  <script src="views/testRequests/testRequests.js"></script>   
+  <script src="views/alice/alice.js"></script>    
+  <script src="components/editableList/editableList.js"></script>        
+  <script src="components/clickableRequest/clickableRequest.js"></script>
+  <script src="../common/services/sendCommandService.js"></script>
+  <script src="../common/services/statePopulator.js"></script>  
+
+  <script src="../common/components/eventsListener/eventsListener.js"></script> 
+  <script src="../common/views/camera_men_detctor/camera_men_detctor.js"></script>   
+  <script>
+  
+   deferredBootstrapper.bootstrap({
+                element: document.documentElement,
+                module: 'myApp',
+                bootstrapConfig: {
+                    strictDi: true
+                },
+                resolve: {
+                    config: [
+                        '$http',function ($http) {
+                            return $http.get('/config.json').then(function (result) {
+                                return result.data;
+                            });
+                        }
+                    ]
+                }
+            });
+  
+  </script>
+  
+</body>
+</html>

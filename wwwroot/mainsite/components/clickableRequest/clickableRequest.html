@@ -1,0 +1,34 @@
+﻿<fieldset>
+	<legend><h3>{{eventDescription.description}}</h3></legend>
+	
+	<div ng-if="eventDescription.method === 'post'">
+		<span data-url-samples-with-value="">
+	</div>
+	
+	<div ng-if="!eventDescription.method" ng-switch="eventDescription.type">
+		<div ng-switch-when="boolean">
+			Значение правдиво: <span data-url-samples-with-value="true"></span> 
+			<br /> 
+			Значение ложно: <span data-url-samples-with-value="false"></span>
+		</div>
+
+		<div ng-switch-when="predefined">
+			<div ng-repeat="value in ::eventDescription.possible_values">
+				{{value}} : <span data-url-samples-with-value="value"></span>
+			</div>	
+		</div>
+
+		<div ng-switch-when="string">
+			<input ng-model="customValue" style="width: 150px"> : <span data-url-samples-with-value="customValue"></span>
+			</div>
+
+			<div ng-switch-when="number">
+				<input ng-model="customValue" style="width: 150px"> :  <span data-url-samples-with-value="customValue"></span>
+			</div>
+			
+			<div ng-switch-when="none">
+				Запрос без param:  <span data-url-samples-with-value=""></span>
+			</div>
+	</div>
+</fieldset>
+<br />

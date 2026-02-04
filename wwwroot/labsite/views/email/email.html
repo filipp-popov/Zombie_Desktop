@@ -1,0 +1,70 @@
+<!--<ul class="nav">-->
+		<!--<li><a href="#/main">{{"vaccine_creation" | localized}}</a></li>-->
+		<!--<li class="active"><a href="">{{"email" | localized}}</a></li>-->
+<!--</ul>-->
+<div class="ui fluid two item top attached tabular menu blue">
+	<a class="item" data-tab="first" href="#/main">{{"vaccine_creation" | localized}}</a>
+	<a class="item active" data-tab="second" href="#/email">{{"email" | localized}}</a>
+</div>
+<div class="ui bottom attached tab segment active" data-tab="second" style="min-height: 800px; padding: 0px">
+
+	<div class="col-2">
+		<div class="same-height">
+			<div class="side-nav">
+				<ul>
+					<li class="compose">
+						<a href="#/compose_email" class="ui green button">
+							{{"compose_email" | localized}}
+						</a>
+					</li>
+					<li class="bold active"><a href="">{{"inbox" | localized}} <span><span ng-if="vm.getUnreadEmails()">({{vm.getUnreadEmails()}})</span></span></a></li>
+				    <li><a href="#/sent_emails">{{"sent_emails:caption" | localized}}</a></li>
+				</ul>
+			</div>
+			<div class="content" ng-show="state.emails.length > 0">
+				<h2>{{"inbox" | localized}}</h2>
+				<p class="desc">{{"email_retention_policy" | localized : getRemovedBeforeDate()}}</p>
+				<table class="table-emails" >
+					<thead>
+						<tr class="bold">
+							<th><a href="javascript:void(0);">{{"email_from" | localized}}</a></th>
+							<th><a href="javascript:void(0);">{{"email_subject" | localized}}</a></th>
+							<th class="active"><a href="javascript:void(0);">{{"email_date" | localized}}</a></th>
+						</tr>
+					<tbody> 
+						<tr 
+							ng-class="{'bold': email.unread, 'active': $index === state.displayedEmailIndex}" 
+							ng-repeat="email in state.emails"
+							ng-click="onEmailClick($index, email)"> 
+							<td><a >{{email.from}}</a></td>
+							<td><a >{{email.title}}</a></td>
+							<td><a >{{getTimestamp(email.timestampMoment)}}</a></td>
+						</tr>						
+					</tbody>
+					<tfoot>
+						<tr>
+							<td><span>{{"total_emails" | localized: state.emails.length}}</span></td>
+						</tr>	
+					</tfoot>	
+					</thead>
+				</table>
+				<div class="email-box">
+					<div class="box-header">
+						<img src="{{state.emails[state.displayedEmailIndex].from===('mark_name'| localized)?'img/avatar/elliot.jpg':'img/avatar/molly.png'}}" height="70" width="70">
+						<div class="box-right">
+							<p class="date">{{getTimestamp(state.emails[vm.displayedEmailIndex].timestampMoment)}}</p>
+							<p>{{state.emails[state.displayedEmailIndex].from}}</p>
+							<h4>{{state.emails[state.displayedEmailIndex].title}}</h4>
+						</div>	
+					</div>
+					<div class="to">
+						<p>{{"email_to" | localized}}: <span>{{state.emails[state.displayedEmailIndex].to}}</span></p>
+					</div>
+					<div class="box-body" ng-bind-html="state.emails[state.displayedEmailIndex].body | unsafe">
+					</div>
+				</div>	
+			</div>
+		</div>
+	</div>
+
+</div>

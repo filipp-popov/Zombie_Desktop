@@ -1,0 +1,516 @@
+[
+	{
+		"name": "Входная дверь",
+		"events": {
+			"front_door_card_attempted_value": {
+				"default_value": "",
+				"type": "string",
+				"can_send_to_control_unit": false,
+				"description": "Админ поднес карточку. Попытка открытия входной двери"
+			},
+			"game_started": {
+				"default_value": false,
+				"type": "boolean",
+				"can_send_to_control_unit": true,
+				"description": "Игра началась / не завершилась"
+			},
+			"front_door_lock_on": {
+				"default_value": false,
+				"type": "boolean",
+				"can_send_to_control_unit": true,
+				"description": "Входная дверь открыта / закрыта"
+			}
+		}
+	},
+	{
+		"name": "Выходная дверь",
+		"events": {
+			"exit_door_lock_on": {
+				"default_value": false,
+				"type": "boolean",
+				"can_send_to_control_unit": true,
+				"description": "Выходная дверь открыта / закрыта"
+			}
+		}
+	},
+	{
+		"name": "Стена с кроликами",
+		"events": {
+			"rabbits_shutter_lock_on": {
+				"default_value": false,
+				"type": "boolean",
+				"can_send_to_control_unit": false,
+				"description": "Ставни открыты / закрыты"
+			},
+			"rabbits_partition_lock_on": {
+				"default_value": false,
+				"type": "boolean",
+				"can_send_to_control_unit": false,
+				"description": "Перегородка открыта / закрыта"
+			}
+		}
+	},
+	{
+		"name": "Маленькая дверца",
+		"events": {
+			"little_door_lock_on": {
+				"default_value": false,
+				"type": "boolean",
+				"can_send_to_control_unit": false,
+				"description": "Маленькая дверца открыта / закрыта"
+			}
+		}
+	},
+	{
+		"name": "Сервант",
+		"events": {
+			"cupboard_door_lock_on": {
+				"default_value": false,
+				"type": "boolean",
+				"can_send_to_control_unit": false,
+				"description": "Дверца серванта открыта / закрыта"
+			}
+		}
+	},
+	{
+		"name": "Комод",
+		"events": {
+			"commode": {
+				"default_value": "not_active",
+				"type": "predefined",
+				"possible_values": [
+					"not_active",
+					"in_progress",
+					"finished"
+				],
+				"can_send_to_control_unit": true,
+				"description": "Комод не активен / активен / выполнен"
+			}
+		}
+	},
+	{
+		"name": "Шкаф-дверь",
+		"events": {
+			"passage_wardrobe_left_door_lock_on": {
+				"default_value": false,
+				"type": "boolean",
+				"can_send_to_control_unit": true,
+				"description": "Левая дверца шкафа-двери открыта / закрыта"
+			},
+			"passage_wardrobe_right_door_lock_on": {
+				"default_value": false,
+				"type": "boolean",
+				"can_send_to_control_unit": true,
+				"description": "Правая дверца шкафа-двери открыта / закрыта"
+			}
+		}
+	},
+	{
+		"name": "Королевская игра",
+		"events": {
+			"kings_game_intro_was_run": {
+				"default_value": false,
+				"type": "boolean",
+				"can_send_to_control_unit": true,
+				"description": "Подсказка 'Королевская_игра' воспроизведена / не воспроизведен"
+			},
+			"kings_game_queen_speech1_was_run": {
+				"default_value": false,
+				"type": "boolean",
+				"can_send_to_control_unit": true,
+				"description": "Аудиофайл 'Королева1' воспроизведен / не воспроизведен"
+			},
+			"kings_game_queen_speech2_was_run": {
+				"default_value": false,
+				"type": "boolean",
+				"can_send_to_control_unit": true,
+				"description": "Аудиофайл 'Королева2' воспроизведен / не воспроизведен"
+			},
+			"kings_game_figures_correct": {
+				"default_value": false,
+				"type": "boolean",
+				"can_send_to_control_unit": false,
+				"description": "Все фигурки расставлены правильно / неправильно"
+			},
+			"kings_game_scaffold_figure_correct": {
+				"default_value": false,
+				"type": "boolean",
+				"can_send_to_control_unit": false,
+				"description": "Плаха фигурка поставлена верно / неверно"
+			},
+			"kings_game_scaffold_flag_correct": {
+				"default_value": false,
+				"type": "boolean",
+				"can_send_to_control_unit": false,
+				"description": "Плаха флаг поставлен верно / неверно"
+			},
+			"kings_game_gallows_figure_correct": {
+				"default_value": false,
+				"type": "boolean",
+				"can_send_to_control_unit": false,
+				"description": "Виселица фигурка поставлена верно / неверно"
+			},
+			"kings_game_gallows_flag_correct": {
+				"default_value": false,
+				"type": "boolean",
+				"can_send_to_control_unit": false,
+				"description": "Виселица флаг поставлен верно / неверно"
+			},
+			"kings_game_pyre_figure_correct": {
+				"default_value": false,
+				"type": "boolean",
+				"can_send_to_control_unit": false,
+				"description": "Костер фигурка поставлена верно / неверно"
+			},
+			"kings_game_pyre_flag_correct": {
+				"default_value": false,
+				"type": "boolean",
+				"can_send_to_control_unit": false,
+				"description": "Костер  флаг поставлен верно / неверно"
+			},
+			"kings_game_prison_figure_correct": {
+				"default_value": false,
+				"type": "boolean",
+				"can_send_to_control_unit": false,
+				"description": "Тюрьма фигурка поставлена верно / неверно"
+			},
+			"kings_game_prison_flag_correct": {
+				"default_value": false,
+				"type": "boolean",
+				"can_send_to_control_unit": false,
+				"description": "Тюрьма флаг поставлен верно / неверно"
+			}
+		}
+	},
+	{
+		"name": "Шалтай",
+		"events": {
+			"humpty_dumpty_lock_on": {
+				"default_value": false,
+				"type": "boolean",
+				"can_send_to_control_unit": true,
+				"description": "Шалтай открыт / закрыт"
+			},
+			"humpty_dumpty_left_arm_placed": {
+				"default_value": false,
+				"type": "boolean",
+				"can_send_to_control_unit": false,
+				"description": "Левая рука Шалтая на месте / не на месте"
+			},
+			"humpty_dumpty_right_arm_placed": {
+				"default_value": false,
+				"type": "boolean",
+				"can_send_to_control_unit": false,
+				"description": "Правая рука Шалтая на месте / не на месте"
+			},
+			"humpty_dumpty_left_leg_placed": {
+				"default_value": false,
+				"type": "boolean",
+				"can_send_to_control_unit": false,
+				"description": "Левая нога Шалтая на месте / не на месте"
+			},
+			"humpty_dumpty_right_leg_placed": {
+				"default_value": false,
+				"type": "boolean",
+				"can_send_to_control_unit": false,
+				"description": "Правая нога Шалтая на месте / не на месте"
+			}
+		}
+	},
+	{
+		"name": "Часы и циферблат",
+		"events": {
+			"clock_face_installed": {
+				"default_value": false,
+				"type": "boolean",
+				"can_send_to_control_unit": false,
+				"description": "Циферблат установлен / снят"
+			}
+		}
+	},
+	{
+		"name": "Шкаф с чайником",
+		"events": {
+			"locker_kettle_locked": {
+				"default_value": false,
+				"type": "boolean",
+				"can_send_to_control_unit": true,
+				"description": "Замок на шкафу с чайником включен / выключен"
+			}
+		}
+	},
+	{
+		"name": "Телефон",
+		"events": {
+			"phone_solved": {
+				"default_value": false,
+				"type": "boolean",
+				"can_send_to_control_unit": false,
+				"description": "Телефон решен / не решен"
+			},
+			"phone_handset_down": {
+				"default_value": false,
+				"type": "boolean",
+				"can_send_to_control_unit": false,
+				"description": "Трубка на месте / не на месте"
+			}
+		}
+	},
+	{
+		"name": "Стол с чашками",
+		"events": {
+			"tea_time_solved": {
+				"default_value": false,
+				"type": "boolean",
+				"can_send_to_control_unit": false,
+				"description": "Стол с чашками решен /не решен"
+			},
+			"tea_time_locked": {
+				"default_value": false,
+				"type": "boolean",
+				"can_send_to_control_unit": true,
+				"description": "Замок на столе с чашками включен / выключен"
+			},
+			"tea_time_kettle_present": {
+				"default_value": false,
+				"type": "boolean",
+				"can_send_to_control_unit": false,
+				"description": "Чайник на столе с чашками стоит на месте / не на месте"
+			},
+			"tea_time_waiting_for_new_master": {
+				"default_value": false,
+				"type": "boolean",
+				"can_send_to_control_unit": true,
+				"description": "Готовность считать новую мастер-карту да / нет"
+			},
+			"tea_time_cup_1_correct": {
+				"default_value": false,
+				"type": "boolean",
+				"can_send_to_control_unit": false,
+				"description": "Чашка на 1 час установлена верно / неверно"
+			},
+			"tea_time_cup_2_correct": {
+				"default_value": false,
+				"type": "boolean",
+				"can_send_to_control_unit": false,
+				"description": "Чашка на 2 часа установлена верно / неверно"
+			},
+			"tea_time_cup_3_correct": {
+				"default_value": false,
+				"type": "boolean",
+				"can_send_to_control_unit": false,
+				"description": "Чашка на 3 часа установлена верно / неверно"
+			},
+			"tea_time_cup_4_correct": {
+				"default_value": false,
+				"type": "boolean",
+				"can_send_to_control_unit": false,
+				"description": "Чашка на 4 часа установлена верно / неверно"
+			},
+			"tea_time_cup_5_correct": {
+				"default_value": false,
+				"type": "boolean",
+				"can_send_to_control_unit": false,
+				"description": "Чашка на 5 часов установлена верно / неверно"
+			},
+			"tea_time_cup_6_correct": {
+				"default_value": false,
+				"type": "boolean",
+				"can_send_to_control_unit": false,
+				"description": "Чашка на 6 часов установлена верно / неверно"
+			},
+			"tea_time_cup_7_correct": {
+				"default_value": false,
+				"type": "boolean",
+				"can_send_to_control_unit": false,
+				"description": "Чашка на 7 часов установлена верно / неверно"
+			},
+			"tea_time_cup_8_correct": {
+				"default_value": false,
+				"type": "boolean",
+				"can_send_to_control_unit": false,
+				"description": "Чашка на 8 часов установлена верно / неверно"
+			},
+			"tea_time_cup_9_correct": {
+				"default_value": false,
+				"type": "boolean",
+				"can_send_to_control_unit": false,
+				"description": "Чашка на 9 часов установлена верно / неверно"
+			},
+			"tea_time_cup_10_correct": {
+				"default_value": false,
+				"type": "boolean",
+				"can_send_to_control_unit": false,
+				"description": "Чашка на 10 часов установлена верно / неверно"
+			},
+			"tea_time_cup_11_correct": {
+				"default_value": false,
+				"type": "boolean",
+				"can_send_to_control_unit": false,
+				"description": "Чашка на 11 часов установлена верно / неверно"
+			}
+		}
+	},
+	{
+		"name": "Шахматный стол",
+		"events": {
+			"chess_locked": {
+				"default_value": false,
+				"type": "boolean",
+				"can_send_to_control_unit": true,
+				"description": "Замок в шахматном столе включен / выключен"
+			},
+			"chess_queen_placed": {
+				"default_value": false,
+				"type": "boolean",
+				"can_send_to_control_unit": false,
+				"description": "Королева на своем месте / не на своем месте"
+			},
+			"chess_knight_placed": {
+				"default_value": false,
+				"type": "boolean",
+				"can_send_to_control_unit": false,
+				"description": "Конь на своем месте / не на своем месте"
+			}
+		}
+	},
+	{
+		"name": "Розы",
+		"events": {
+			"roses_locked": {
+				"default_value": false,
+				"type": "boolean",
+				"can_send_to_control_unit": true,
+				"description": "Замок в розах включен / выключен"
+			},
+			"rose_1_1_on": {
+				"default_value": false,
+				"type": "boolean",
+				"can_send_to_control_unit": true,
+				"description": "Роза по координатам 1:1 вкл / выкл"
+			},
+			"rose_1_2_on": {
+				"default_value": false,
+				"type": "boolean",
+				"can_send_to_control_unit": true,
+				"description": "Роза по координатам 1:2 вкл / выкл"
+			},
+			"rose_1_3_on": {
+				"default_value": false,
+				"type": "boolean",
+				"can_send_to_control_unit": true,
+				"description": "Роза по координатам 1:3 вкл / выкл"
+			},
+			"rose_2_1_on": {
+				"default_value": false,
+				"type": "boolean",
+				"can_send_to_control_unit": true,
+				"description": "Роза по координатам 2:1 вкл / выкл"
+			},
+			"rose_2_2_on": {
+				"default_value": false,
+				"type": "boolean",
+				"can_send_to_control_unit": true,
+				"description": "Роза по координатам 2:2 вкл / выкл"
+			},
+			"rose_2_3_on": {
+				"default_value": false,
+				"type": "boolean",
+				"can_send_to_control_unit": true,
+				"description": "Роза по координатам 2:3 вкл / выкл"
+			},
+			"rose_3_1_on": {
+				"default_value": false,
+				"type": "boolean",
+				"can_send_to_control_unit": true,
+				"description": "Роза по координатам 3:1 вкл / выкл"
+			},
+			"rose_3_2_on": {
+				"default_value": false,
+				"type": "boolean",
+				"can_send_to_control_unit": true,
+				"description": "Роза по координатам 3:2 вкл / выкл"
+			},
+			"rose_3_3_on": {
+				"default_value": false,
+				"type": "boolean",
+				"can_send_to_control_unit": true,
+				"description": "Роза по координатам 3:3 вкл / выкл"
+			}
+		}
+	},
+	{
+		"name": "Лабиринт",
+		"events": {
+			"maze_locked": {
+				"default_value": false,
+				"type": "boolean",
+				"can_send_to_control_unit": true,
+				"description": "Замок в лабиринте включен / выключен"
+			},
+			"maze_button_pressed": {
+				"default_value": false,
+				"type": "boolean",
+				"can_send_to_control_unit": false,
+				"description": "Кнопка в лабиринте нажата / отжата"
+			}
+		}
+	},
+	{
+		"name": "Бесконечный шкаф",
+		"events": {
+			"infinite_locker_1_locked": {
+				"default_value": false,
+				"type": "boolean",
+				"can_send_to_control_unit": false,
+				"description": "Бесконечный шкаф. Первый шкаф открыт / закрыт"
+			},
+			"infinite_locker_2_locked": {
+				"default_value": false,
+				"type": "boolean",
+				"can_send_to_control_unit": false,
+				"description": "Бесконечный шкаф. Второй шкаф открыт / закрыт"
+			},
+			"infinite_locker_3_locked": {
+				"default_value": false,
+				"type": "boolean",
+				"can_send_to_control_unit": false,
+				"description": "Бесконечный шкаф. Третий шкаф открыт / закрыт"
+			}
+		}
+	},
+	{
+		"name": "Ворот и стрелки",
+		"events": {
+			"winch_completed": {
+				"default_value": false,
+				"type": "boolean",
+				"can_send_to_control_unit": true,
+				"description": "Ворот пройден / не пройден"
+			},
+			"winch_turn_count": {
+				"default_value": 0,
+				"type": "number",
+				"can_send_to_control_unit": false,
+				"description": "Количество пройденных оборотов"
+			}
+		}
+	},
+	{
+		"name": "Служебные запросы",
+		"events": {
+			"game_language": {
+				"default_value": "en", 
+				"type": "predefined",
+				"possible_values": [
+					"en",
+					"ru",
+					"es",
+					"de"
+				],
+				"can_send_to_control_unit": true,
+				"description": "Сменить язык игры"
+			}
+		}
+	}
+]

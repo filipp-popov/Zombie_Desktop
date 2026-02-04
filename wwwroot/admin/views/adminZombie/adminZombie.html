@@ -1,0 +1,369 @@
+<div class="ui justified container">
+  <div class="ui middle aligned divided list">
+
+    <div class="item">
+      <h2>Game started at:
+        <span> {{getTimeStampDate(gameState.zombie.game_started_time)}}</span>
+        &nbsp;&nbsp;Duration:
+        <span> {{getTimeStampGameLength(gameState.zombie.game_started_time)}}</span>
+			</h2>
+    </div>
+
+    <div class="item">
+      <h2>Game language:
+				<span> {{gameState.zombie.game_language}}</span>
+			</h2>
+    </div>
+
+    <div class="item">
+      <div class="ui equal width  grid container">
+        <div class="two column">
+          <i class="circular users icon"></i> Автоклав
+        </div>
+        <div class="five column">
+          Состояние:
+          <span ng-if="gameState.zombie.sterilizer_lock_on">
+						<i class="lock icon"></i> АКТИВЕН
+					</span>
+          <span ng-if="!gameState.zombie.sterilizer_lock_on">
+						<i class="unlock icon"></i> ЗАВЕРШЕН
+					</span>
+        </div>
+        <div class="three column">
+          <div>Температура: {{gameState.zombie.sterilizer_panel_temperature}}</div>
+        </div>
+        <div class="two column">
+          <button ng-if="gameState.zombie.sterilizer_lock_on" class="ui primary button" ng-click="sendGetCommand('sterilizer_lock_on', false)">
+            ВЫКЛЮЧИТЬ МАГНИТ
+          </button>
+          <button ng-if="!gameState.zombie.sterilizer_lock_on" class="ui button" ng-click="sendGetCommand('sterilizer_lock_on', true)">
+            ВКЛЮЧИТЬ МАГНИТ
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="ui equal width  grid container">
+        <div class="two column">
+          <i class="circular users icon"></i> Дверь в бункер
+        </div>
+        <div class="five column">
+          <span ng-if="!gameState.zombie.prison_correct_input">АКТИВНА</span>
+          <span ng-if="gameState.zombie.prison_correct_input">ЗАВЕРШЕНА</span>
+        </div>
+        <div class="three column">
+          <div>Завершено шагов для левой двери: {{gameState.zombie.prison_left_valve_succeeded_action_number}}</div>
+          <div>Завершено шагов для правой двери: {{gameState.zombie.prison_right_valve_succeeded_action_number}}</div>
+          <div>Активный алгоритм: {{gameState.zombie.prison_lock_active_algo_number}}</div>
+        </div>
+        <div class="two column">
+          <button ng-if="gameState.zombie.prison_lock_on" class="ui primary button" ng-click="sendGetCommand('prison_lock_on', false)">
+            ВЫКЛЮЧИТЬ МАГНИТ
+          </button>
+          <button ng-if="!gameState.zombie.prison_lock_on" class="ui button" ng-click="sendGetCommand('prison_lock_on', true)"> ВКЛЮЧИТЬ МАГНИТ
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="ui equal width  grid container">
+        <div class="two column">
+          <i class="circular users icon"></i> Финальный ящик
+        </div>
+        <div class="eight column">
+          <span ng-if="!gameState.zombie.final_box_finished">АКТИВЕН</span>
+          <span ng-if="gameState.zombie.final_box_finished">ЗАВЕРШЕН</span>
+        </div>
+        <div class="two column">
+          <div class="col-md-3 col-xs-4 col-sm-4">Катализатор {{gameState.zombie.final_box_catalyst_placed ? "НА МЕСТЕ" : "ОТСУТСТВУЕТ"}}</div>
+          <div class="col-md-3 col-xs-4 col-sm-4">Реагент {{gameState.zombie.final_box_reagent_placed ? "НА МЕСТЕ" : "ОТСУТСТВУЕТ"}}</div>
+          <div class="col-md-3 col-xs-4 col-sm-4">Процесс {{gameState.zombie.final_box_in_progress ? "ЗАПУЩЕН" : "НЕ ЗАПУЩЕН"}}</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="ui equal width  grid container">
+        <div class="two column">
+          <i class="circular users icon"></i> Cтол профессора
+        </div>
+        <div class="eight column">
+          {{(gameState.zombie.final_box_card_active ? "Считыватель ВКЛЮЧЕН": "Считыватель ВЫКЛЮЧЕН")}}
+        </div>
+        <div class="two column">
+          <button ng-if="gameState.zombie.final_box_card_active" class="ui primary button" ng-click="sendGetCommand('final_box_card_active', false)">
+            ВЫКЛЮЧИТЬ МАГНИТ
+          </button>
+          <button ng-if="!gameState.zombie.final_box_card_active" class="ui button" ng-click="sendGetCommand('final_box_card_active', true)">
+            ВКЛЮЧИТЬ МАГНИТ
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="ui equal width  grid container">
+        <div class="two column">
+          <i class="circular users icon"></i> Входная дверь
+        </div>
+        <div class="eight column">
+          {{(gameState.zombie.input_lock_on ? "Магнит ВКЛЮЧЕНЫ": "Магнит ВЫКЛЮЧЕНЫ")}}
+        </div>
+        <div class="two column">
+          <button class="ui primary button" ng-click="sendGetCommand('input_lock_on', false)"> ВЫКЛЮЧИТЬ МАГНИТ
+          </button>
+          <button class="ui button" ng-click="sendGetCommand('input_lock_on', true)"> ВКЛЮЧИТЬ МАГНИТ
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="ui equal width  grid container">
+        <div class="two column">
+          <i class="circular users icon"></i> Пневмопочта (от девочки)
+        </div>
+        <div class="eight column">
+          {{(gameState.zombie.girl_air_tube_lock_on ? "ЗАМОК ВКЛЮЧЕН": "ЗАМОК ВЫКЛЮЧЕН")}}
+        </div>
+        <div class="two column">
+          <button ng-if="gameState.zombie.girl_air_tube_lock_on" class="ui primary button" ng-click="sendGetCommand('girl_air_tube_lock_on', false)">
+            ВЫКЛЮЧИТЬ МАГНИТ
+          </button>
+          <button ng-if="!gameState.zombie.girl_air_tube_lock_on" class="ui button" ng-click="sendGetCommand('girl_air_tube_lock_on', true)">
+            ВКЛЮЧИТЬ МАГНИТ
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="ui equal width  grid container">
+        <div class="two column">
+          <i class="circular users icon"></i> Освещение
+        </div>
+        <div class="eight column">
+          {{(gameState.zombie.main_light_on ? "ВКЛЮЧЕНО": "ВЫКЛЮЧЕНО")}}
+        </div>
+        <div class="two column">
+          <button ng-if="gameState.zombie.main_light_on" class="ui primary button" ng-click="sendGetCommand('main_light_on', false)">
+            ВЫКЛЮЧИТЬ МАГНИТ
+          </button>
+          <button ng-if="!gameState.zombie.main_light_on" class="ui button" ng-click="sendGetCommand('main_light_on', true)"> ВКЛЮЧИТЬ МАГНИТ
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="ui equal width  grid container">
+        <div class="two column">
+          <i class="circular users icon"></i> Язык
+        </div>
+        <div class="eight column">
+          Current: {{gameState.zombie.game_language}}
+        </div>
+        <div class="two column">
+          <span ng-repeat="lang in languages">
+						<button type="button" class="ui button" ng-click="sendGetCommand('game_language', lang)" ng-class="{'positive':lang===gameState.zombie.game_language}">{{lang}}</button>
+						&nbsp;
+					</span>
+        </div>
+      </div>
+    </div>
+
+    <a href="../labsite/#/girl_escape_observer">Посмотреть состояние игры с девочкой</a>
+
+    <h2>ПОДСКАЗКИ</h2>
+
+    <div class="item">
+      <div class="ui equal width  grid container">
+        <div class="two column">
+          <i class="circular users icon"></i> Как нам найти пароль?
+        </div>
+        <div class="one column">
+          <button type="button" class="ui button" ng-click="sendPlaySoundRequest('password_greece_conference', 'zombie')">Профессор ездил на конференцию в Грецию</button>
+        </div>
+
+        <div class="one column">
+          <button type="button" class="ui button" ng-click="sendPlaySoundRequest('password_sun_with_flag', 'zombie')">Приложите пленку с отметками к диплому, что бы солнце совпало с флагом. </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="ui equal width  grid container">
+        <div class="two column">
+          <i class="circular users icon"></i> Где нам найти катализатор (реагент)?
+        </div>
+        <div class="one column">
+          <button type="button" class="ui button" ng-click="sendPlaySoundRequest('plans_find_professor', 'zombie')">Попробуйте найти профессора в здании, возможно он еще жив</button>
+        </div>
+
+        <div class="one column">
+          <button type="button" class="ui button" ng-click="sendPlaySoundRequest('plans_what_floor_number', 'zombie')">На каком этаже он находится?</button>
+        </div>
+
+        <div class="one column">
+          <button type="button" class="ui button" ng-click="sendPlaySoundRequest('plans_put_floor_number', 'zombie')">Введите номер этажа в строку детектор заражения</button>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="ui equal width  grid container">
+        <div class="two column">
+          <i class="circular users icon"></i> Что нам надо здесь делать, куда вести девочку?
+        </div>
+        <div class="one column">
+          <button type="button" class="ui button" ng-click="sendPlaySoundRequest('girl_escape_lead_the_girl', 'zombie')">Мутирующий обьект - это девочка доведите ее до союзников</button>
+        </div>
+
+        <div class="one column">
+          <button type="button" class="ui button" ng-click="sendPlaySoundRequest('girl_fears_dark', 'zombie')">Девочка идет на свет ,боится темноты и зомби</button>
+        </div>
+
+        <div class="one column">
+          <button type="button" class="ui button" ng-click="sendPlaySoundRequest('girl_turn_light_on_off', 'zombie')">Чтобы девочка перемещалась — выключайте свет в ее помещении и включайте в следующем</button>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="ui equal width  grid container">
+        <div class="two column">
+          <i class="circular users icon"></i> Открыть дверь в лабораторию, найти ключ от двери.
+        </div>
+        <div class="one column">
+          <button type="button" class="ui button" ng-click="sendPlaySoundRequest('door_be_attentive', 'zombie')">Осмотритесь внимательнее</button>
+        </div>
+
+        <div class="one column">
+          <button type="button" class="ui button" ng-click="sendPlaySoundRequest('door_girl_look_attentive', 'zombie')">Обратите внимание на консоль над монитором</button>
+        </div>
+
+        <div class="one column">
+          <button type="button" class="ui button" ng-click="sendPlaySoundRequest('door_look_at_eye_level', 'zombie')">Осмотрите внимательно помещение на уровне глаз</button>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="ui equal width  grid container">
+        <div class="two column">
+          <i class="circular users icon"></i> Что нам делать с колбой?
+        </div>
+        <div class="one column">
+          <button type="button" class="ui button" ng-click="sendPlaySoundRequest('catalyst_two_circles', 'zombie')">Обратите внимание на 2 серых круга. Попробуйте нажать на них</button>
+        </div>
+
+        <div class="one column">
+          <button type="button" class="ui button" ng-click="sendPlaySoundRequest('catalyst_cental_wardrobe', 'zombie')">Изучить центральный шкаф</button>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="ui equal width  grid container">
+        <div class="two column">
+          <i class="circular users icon"></i>Открыть автоклав / выставить необходимую температуру
+        </div>
+        <div class="one column">
+          <button type="button" class="ui button" ng-click="sendPlaySoundRequest('sterilizer_animal_experience', 'zombie')">В лаборатории проводились опыты на животных</button>
+        </div>
+
+        <div class="one column">
+          <button type="button" class="ui button" ng-click="sendPlaySoundRequest('sterilizer_first_examples', 'zombie')">Первые образцы вакцины испытывались на животных</button>
+        </div>
+
+        <div class="one column">
+          <button type="button" class="ui button" ng-click="sendPlaySoundRequest('sterilizer_rat_survived', 'zombie')">Одно из подопытных животных выжило</button>
+        </div>
+
+        <div class="one column">
+          <button type="button" class="ui button" ng-click="sendPlaySoundRequest('sterilizer_fixate_temp', 'zombie')">Необходимо выставить тумблеры, чтобы зафиксировать температуру</button>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="ui equal width  grid container">
+        <div class="two column">
+          <i class="circular users icon"></i>Открыть дверь в бункер
+        </div>
+        <div class="one column">
+          <button type="button" class="ui button" ng-click="sendPlaySoundRequest('bunker_algo_at_mail', 'zombie')">Прочитайте внимательно письмо «алгоритм безопасности» на почте профессора</button>
+        </div>
+
+        <div class="one column">
+          <button type="button" class="ui button" ng-click="sendPlaySoundRequest('bunker_simultaneously', 'zombie')">Вращать штурвалы нужно одновременно</button>
+        </div>
+
+        <div class="one column">
+          <button type="button" class="ui button" ng-click="sendPlaySoundRequest('bunker_red_lines', 'zombie')">Для удобства первоначальное положение штурвалов должно быть по направляющим</button>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="ui equal width  grid container">
+        <div class="two column">
+          <i class="circular users icon"></i>Взять анализ крови у зомби - воспользоваться анализатором
+        </div>
+        <div class="one column">
+          <button type="button" class="ui button" ng-click="sendPlaySoundRequest('analysis_equipment', 'zombie')">Чтобы взять анализ крови, воспользуйтесь прибором</button>
+        </div>
+
+        <div class="one column">
+          <button type="button" class="ui button" ng-click="sendPlaySoundRequest('analysis_put_to_hole', 'zombie')">Вставить прибор в отверстие в клетке</button>
+        </div>
+
+      </div>
+    </div>
+
+
+    <div class="item">
+      <div class="ui equal width  grid container">
+        <div class="two column">
+          <i class="circular users icon"></i>Найти штамм по таблице
+        </div>
+        <div class="one column">
+          <button type="button" class="ui button" ng-click="sendPlaySoundRequest('table_find_strain', 'zombie')">Чтобы найти штамм, воспользуйтесь картой штаммов и показаниями шкал с анализатором</button>
+        </div>
+
+        <div class="one column">
+          <button type="button" class="ui button" ng-click="sendPlaySoundRequest('table_strain_rules', 'zombie')">Сверху таблицы написано как образуется штамм</button>
+        </div>
+
+        <div class="one column">
+          <button type="button" class="ui button" ng-click="sendPlaySoundRequest('table_strain_maths', 'zombie')">Чтобы определить признак, определите необходимый диапазон признаков. Решите неравенство</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="ui equal width  grid container">
+        <div class="two column">
+          <i class="circular users icon"></i>Запустить процесс создания вакцины: приложить карту профессора слева, нажать
+          кнопку запуск на компе
+        </div>
+        <div class="one column">
+          <button type="button" class="ui button" ng-click="sendPlaySoundRequest('creation_search_on_table', 'zombie')">Внимательно обыщите стол</button>
+        </div>
+
+        <div class="one column">
+          <button type="button" class="ui button" ng-click="sendPlaySoundRequest('creation_table_left', 'zombie')">Обратить внимание на область слева в столе</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

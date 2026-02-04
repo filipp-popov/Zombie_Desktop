@@ -1,0 +1,172 @@
+﻿<div class="ui fluid two item top attached tabular menu blue">
+	<a class="item active" data-tab="first" href="#/main">{{"vaccine_creation" | localized}}</a>
+	<a class="item" data-tab="second" href="#/email">{{"email" | localized}}</a>
+</div>
+<div class="ui bottom attached tab segment active" data-tab="first" style="min-height: 800px">
+
+	<div class="steps">
+		<div class="steps-wrap">
+			<div class="first-step" ng-class="{'active': !state.isFirstStageComplete()}">
+				<span>{{"zcreation:load_components" | localized}}</span>
+			</div>
+			<div class="second-step" ng-class="{'active': state.isFirstStageComplete()}">
+				<span>{{"zcreation:identify_yourself" | localized}}</span>
+			</div>
+		</div>
+	</div>
+	<div ng-show="state.processStarted">{{"zcreation:process_started" | localized}}</div>
+	<div ng-show="!state.processStarted">
+
+		<!--<div class="ui three top attached steps">-->
+		<!--<div class="step">-->
+		<!--<i class="truck icon"></i>-->
+		<!--<div class="content">-->
+		<!--<div class="title">Shipping</div>-->
+		<!--<div class="description">Choose your shipping options</div>-->
+		<!--</div>-->
+		<!--</div>-->
+		<!--<div class="active step">-->
+		<!--<i class="payment icon"></i>-->
+		<!--<div class="content">-->
+		<!--<div class="title">Billing</div>-->
+		<!--<div class="description">Enter billing information</div>-->
+		<!--</div>-->
+		<!--</div>-->
+		<!--<div class="disabled step">-->
+		<!--<i class="info icon"></i>-->
+		<!--<div class="content">-->
+		<!--<div class="title">Confirm Order</div>-->
+		<!--<div class="description">Verify order details</div>-->
+		<!--</div>-->
+		<!--</div>-->
+		<!--</div>-->
+
+		<!--&lt;!&ndash; TODO content &ndash;&gt;-->
+		<!---->
+		<!--<div class="ui three bottom attached steps">-->
+		<!--<div class="step">-->
+		<!--<i class="truck icon"></i>-->
+		<!--<div class="content">-->
+		<!--<div class="title">Shipping</div>-->
+		<!--<div class="description">Choose your shipping options</div>-->
+		<!--</div>-->
+		<!--</div>-->
+		<!--<div class="active step">-->
+		<!--<i class="payment icon"></i>-->
+		<!--<div class="content">-->
+		<!--<div class="title">Billing</div>-->
+		<!--<div class="description">Enter billing information</div>-->
+		<!--</div>-->
+		<!--</div>-->
+		<!--<div class="disabled step">-->
+		<!--<i class="info icon"></i>-->
+		<!--<div class="content">-->
+		<!--<div class="title">Confirm Order</div>-->
+		<!--<div class="description">Verify order details</div>-->
+		<!--</div>-->
+		<!--</div>-->
+		<!--</div>-->
+
+		<div ng-show="!state.isFirstStageComplete()">
+			<div class="ui main grid">
+				<div class="ui three column row">
+					<div class="dashboard-stat column">
+						<div class="ui segments">
+							<div class="ui segment">
+								<h3 class="ui blue header">{{"catalyst" | localized}}</h3>
+							</div>
+							<div class="ui secondary inverted dashboard center aligned segment" ng-class="{'olive green': state.catalystLoaded, 'lightgrey': !state.catalystLoaded}">
+								<div class="ui dashboard statistic">
+									<div class="label" style="padding-bottom: 20px; padding-top: 20px;">
+										{{"zcreation:put_catalyst_into_box" | localized}}
+									</div>
+								</div>
+							</div>
+							<div class="ui segment">
+								<div ng-show="!state.catalystLoaded">
+									{{"zcreation:catalyst_not_found" | localized}}
+								</div>
+								<div ng-show="state.catalystLoaded">
+									{{"zcreation:catalyst_loaded" | localized}}
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+					<div class="dashboard-stat column">
+						<form>
+							<div class="ui segments">
+								<div class="ui segment">
+									<h3 class="ui blue header">{{"strain" | localized}}</h3>
+								</div>
+								<div class="ui secondary inverted dashboard center aligned segment" ng-class="{'teal': state.strainFound, 'lightgrey': !state.strainFound}">
+									<div class="ui dashboard statistic">
+										<div class="label">{{"zcreation:strain_hint_header" | localized}}</div>
+										<div class="transparent-input-border" ng-class="{'loading': state.strainLoading, 'error': !state.strainLoading && !state.strainFound && !state.isFirstLoad}">
+											<input class="transparent-input tabable" type="text" maxlength="1" tabindex="1" onfocus="this.select();" ng-keyup="update($event)"
+											ng-model="state.strain1" /> &nbsp;&nbsp;/&nbsp;&nbsp;
+											<input class="transparent-input large tabable" type="text" maxlength="3" tabindex="2" onfocus="this.select();" ng-keyup="update($event)"
+											ng-model="state.strain2" /> &nbsp;&nbsp;-&nbsp;&nbsp;
+											<input class="transparent-input large tabable" type="text" maxlength="3" tabindex="3" onfocus="this.select();" ng-keyup="update($event)"
+											ng-model="state.strain3" />
+										</div>
+
+										<div ng-show="!state.strainLoading && !state.strainFound && !state.isFirstLoad" class="alert alert-danger" role="alert">
+											{{"zcreation:strain_not_found" | localized}}
+										</div>
+										<div ng-show="state.strainLoading" class="alert" role="alert">{{"zcreation:strain_loading" | localized}}</div>
+										<div ng-show="state.strainFound && !state.strainLoading" class="alert alert-success" role="alert">{{"zcreation:strain_loaded" | localized}}</div>
+									</div>
+								</div>
+								<div class="ui segment float right">
+									<button class="fluid tiny ui blue button" tabindex="4" ng-disabled="state.strainLoading || state.strainFound" ng-click="state.tryLoadStrain(state.strain1, state.strain2, state.strain3)">
+										{{"zcreation:check_strain" | localized}}
+									</button>
+								</div>
+							</div>
+						</form>
+					</div>
+
+					<div class="dashboard-stat column">
+						<div class="ui segments">
+							<div class="ui segment">
+								<h3 class="ui blue header">{{"active_component" | localized}}</h3>
+							</div>
+							<div class="ui secondary inverted dashboard center aligned segment" ng-class="{'green': state.reagentLoaded, 'lightgrey': !state.reagentLoaded}">
+								<div class="ui dashboard statistic">
+									<div class="label" style="padding-bottom: 20px; padding-top: 20px;">
+										{{"zcreation:put_active_component_into_box" | localized}}
+									</div>
+								</div>
+							</div>
+							<div class="ui segment">
+								<div ng-show="!state.reagentLoaded">
+									{{"zcreation:active_component_not_found" | localized}}
+								</div>
+								<div ng-show="state.reagentLoaded">
+									{{"zcreation:active_component_loaded" | localized}}
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div ng-show="state.isFirstStageComplete()">
+			<div class="content">
+				<h2>{{"zcreation:smart_card" | localized}}</h2>
+				<div class="vacine-box" ng-class="{'active': state.identityConfirmed}">
+					<div class="square"></div>
+					<p>{{"zcreation:please_scan_smart_card" | localized}}</p>
+				</div>
+				<div style="width: 150px">
+					<button class="fluid tiny ui blue button" tabindex="4" ng-disabled="!state.identityConfirmed" ng-click="state.identityConfirmed && state.startProcess()">
+						{{"zcreation:create_vaccine" | localized}}
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>

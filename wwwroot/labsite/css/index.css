@@ -1,0 +1,617 @@
+body {
+	padding: 0px;
+	margin: 0;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 14px;
+
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+a {
+	cursor: pointer;
+	text-transform: none;
+	text-decoration: none;
+	color: inherit;
+}
+.bold {
+	font-weight: bold;
+}
+h1, h2 {
+	font-weight: bold;
+}
+h2 {
+	font-size: 16px;
+}
+h3 {
+  font-size: 14px;
+}
+.vacine{
+	background: url('../img/textures/grey-mild.png');
+}
+.vacine .vacine-view{
+	background: white;
+	border: 1px lightgray solid;
+	padding: 10px;
+	min-height: 870px;
+}
+
+.vacine .camera-view {
+	position: absolute;
+	top: 130px;
+	padding-left: 20px;
+	width: 880px;
+	padding-top: 30px;
+}
+
+.vacine .camera-view .ui.table tbody tr td.selectable {
+	/*padding: 10px;*/
+	text-align: center;
+}
+
+.vacine .wrap {
+	width: 940px;
+	margin: auto;
+	padding: 20px;
+}
+.vacine header {
+	overflow: hidden;
+}
+.vacine .logo-div {
+  float: left;
+}
+.vacine .address {
+	float: right;
+	text-align: right;
+}
+.vacine .nav {
+	background-color: #444444;
+	/*width: 940px;*/
+	margin: auto;
+	padding: 0;
+	margin-top: 1em;
+	overflow: hidden;
+}
+.vacine .nav li {
+	float: left;
+	color: white;
+	display: block;
+}
+.vacine .nav li a {
+	display: block;
+	padding: 10px 20px;
+}
+.vacine .nav li.active, .vacine .nav li:hover {
+	background-color: #0098db;
+}
+.vacine .steps {
+	padding-bottom: 2em;
+	overflow: hidden;
+	margin-top: 2em;
+}
+.vacine .steps .steps-wrap {
+	border-bottom: 1px solid #bebebe;
+	width: 100%;	
+}
+.vacine .steps div {
+	display: block;
+	float: left;
+	position: relative;
+}
+.vacine .steps div.active {
+	background-color: #cceaf8;
+}
+.vacine .steps div span {
+	display: block;
+	padding: 20px 20px;
+	font-size: 12px;
+}
+.vacine .steps .first-step span:before {
+	content: "1";
+}
+.vacine .steps .second-step span:before {
+	content: "2";
+}	
+.vacine .steps div span:before{
+	border-radius: 50%;
+	width: 17px;
+	height: 17px;
+	display: inline-block;
+	border: 1px solid #bebebe;
+	background-color: #bebebe;
+	text-align: center;
+	margin-right: 7px;
+	color: white;
+}
+.vacine .steps div.active span:before {
+	border: 1px solid #0098db;
+	background-color: #0098db;
+}
+.vacine .steps div.active:before {
+	content: " ";
+	width: 0; 
+	height: 0; 
+	border-left: 12px solid transparent;
+	border-right: 12px solid transparent;	
+	border-top: 12px solid #cceaf8;
+	position: absolute;
+	bottom: -12px;
+	left: 42%;
+}
+.vacine .content .vacine-box {
+	padding: 20px;
+	border: 1px solid #88ab2e;
+	max-width: 400px;
+	overflow: hidden;
+	margin-bottom: 2em;
+	border: 1px dashed #bebebe;
+}
+.vacine .content .vacine-box.active {
+	border: 1px solid #88ab2e;
+}
+.vacine .content .vacine-box .square {
+	width: 80px;
+	height: 80px;
+	background-color: #bebebe;
+	float: left;
+	margin-right: 25px;
+	position: relative;
+}
+.vacine .content .vacine-box.active .square {
+	background-color: #c3d596;
+}
+.vacine .content .vacine-box.active .square:before {
+	content: "";
+	width: 26px;
+	height: 26px;
+	display: inline-block;
+	text-align: center;
+	margin-right: 7px;
+	color: white;
+	background: url(images/ckeck-green.png);
+	position: absolute;
+	bottom: -5px;
+	right: -15px;
+}
+.vacine .content .vacine-box h3 {
+	margin-top: 0;
+	margin-left: 100px;
+}
+.vacine .content .vacine-box p {
+	color: #bebebe;
+	font-size: 12px;
+	margin-top: 0;
+	margin-left: 100px;
+}
+.vacine .content .vacine-box.active p.p-black {
+	color: black;
+}
+.vacine .content .btn {
+	padding: 8px 25px;
+	background-color: #bebebe;
+	margin-top: 1.5em;
+	color: white;
+	display: inline-block;
+	cursor: default;
+}
+.vacine .content .btn.active {
+	background-color: #0098db;
+	cursor: pointer;
+}
+.vacine .content .strain {
+	margin-bottom: 2em;
+}
+.vacine .content .strain.active .btn {
+	display: none;
+}
+.vacine .content .strain.active {
+	background: url(images/ckeck-green.png) right;
+	background-repeat: no-repeat;
+	width: 260px;
+}
+.vacine .content .strain input {
+	padding: 8px 10px;
+	width: 200px;
+	border: 1px solid #bebebe;
+}
+.vacine .content .strain.active input {
+	border: 1px solid #88ab2e;
+}
+.vacine .content .strain .btn {
+	cursor: pointer;
+	margin: 0;
+	padding: 6px 25px 9px 25px;
+	margin-left: 15px;
+	color: black;
+}
+.vacine .content .vacine-creation {
+	text-align: center;
+	color: #bebebe;
+	margin-top: 3em;
+	width: 160px;
+	font-size: 12px;
+}
+.vacine .content .vacine-creation .square {
+	width: 100px;
+	height: 100px;
+	display: block;
+	background-color: #bebebe;
+	margin: auto;
+	margin-bottom: 3em;
+}
+.vacine .col-2 {
+	display: table-cell;
+	width: 50%;
+}
+.vacine .col-2 .same-height {
+	display: table-row;
+	height: 800px;
+}
+.vacine .col-2 .side-nav {
+	background-color: #eeeeee;
+	display: table-cell;
+	width: 190px;
+	border-right: 1px solid #bebebe;
+}
+.vacine .col-2 .side-nav ul {
+	list-style: none;
+	padding-left: 0;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+.vacine .col-2 .side-nav ul li {
+	margin: 5px 0;
+}
+.vacine .col-2 .side-nav ul li a {
+	padding: 5px 10px;
+	display: block;
+}
+.vacine .col-2 .side-nav ul li.active, .vacine .col-2 .side-nav ul li:hover {
+	background-color: white;
+}
+.vacine .col-2 .side-nav ul .compose {
+	/*background-color: #88ab2e;*/
+	/*color: white;*/
+	margin-bottom: 25px;
+	/*font-size: 12px;*/
+	/*padding-left: 5px;*/
+}
+/*.vacine .col-2 .side-nav ul .compose a:before {*/
+	/*content: ' ';*/
+	/*width: 15px;*/
+	/*height: 15px;*/
+	/*display: block;*/
+	/*background: url(images/pencil.png);*/
+	/*margin-right: 10px;*/
+	/*float: left;*/
+/*}*/
+/*.vacine .col-2 .side-nav ul .compose:hover {*/
+	/*background-color: #88ab2e;*/
+/*}*/
+.vacine .col-2 .content {
+	table-cell;
+	padding: 0 0 50px 25px;
+}
+.vacine .col-2 .content .desc {
+	font-size: 12px;
+	margin-top: -10px;
+	color: #bebebe;
+}
+.vacine .col-2 .content .table-emails {
+	width: 680px;
+	border: 1px solid #bebebe;
+	display: block;
+}
+.vacine .col-2 .content .table-emails thead {
+	display: block;
+	overflow: hidden;
+	background-color: #eeeeee;
+	padding-right: 21px;
+	border-bottom: 1px solid #bebebe;
+}
+.vacine .col-2 .content .table-emails thead th {
+	font-weight: normal;
+}
+.vacine .col-2 .content .table-emails  thead tr th.active a:after {
+	content: ' ';
+	width: 8px;
+	height: 8px;
+	background: url(images/arrow-down.png);
+	display: inline-block;
+	margin-left: 5px;
+}
+.vacine .col-2 .content .table-emails tr {
+	display: block;
+}
+.vacine .col-2 .content .table-emails tbody tr {
+	border-bottom: 1px solid #eeeeee;
+	overflow: hidden;
+}
+.vacine .col-2 .content .table-emails tbody tr:last-child {
+	border-bottom: 0;
+}
+.vacine .col-2 .content .table-emails tr td, .vacine .col-2 .content .table-emails tr th {
+	border: 0;
+	display: block;
+	float: left;
+	font-size: 12px;
+	box-sizing: border-box;
+	position: relative;
+}
+.vacine .col-2 .content .table-emails tr td:nth-child(1), .vacine .col-2 .content .table-emails tr th:nth-child(1) {
+	width: 28%;
+}
+.vacine .col-2 .content .table-emails tr td:nth-child(1), .vacine .col-2 .content .table-emails tr th:nth-child(1) {
+	padding-left: 50px;
+	text-align: left;
+}	
+.vacine .col-2 .content .table-emails tr td:nth-child(2), .vacine .col-2 .content .table-emails tr th:nth-child(2) {
+	width: 52%;
+}
+.vacine .col-2 .content .table-emails tr td:nth-child(2) a, .vacine .col-2 .content .table-emails tr th:nth-child(2) a {
+	text-align: left;
+}	
+.vacine .col-2 .content .table-emails tr td:nth-child(3), .vacine .col-2 .content .table-emails tr th:nth-child(3) {
+	width: 20%;
+	text-align: right;
+}
+.vacine .col-2 .content .table-emails tr td:nth-child(3) a, .vacine .col-2 .content .table-emails tr th:nth-child(3) a {
+  	padding-right: 25px;
+}  
+.vacine .col-2 .content .table-emails tr td a, .vacine .col-2 .content .table-emails tr th a {
+	display: block;
+	padding: 10px;
+}
+.vacine .col-2 .content .table-emails tbody tr td:nth-child(3) {
+	border-right: 1px solid #bebebe;
+}	
+.vacine .col-2 .content .table-emails tbody {
+	height: 189px;
+	overflow-y: auto;
+    overflow-x: hidden;
+    display: block;
+}
+.vacine .col-2 .content .table-emails tbody tr.bold td:nth-child(1) a:before {
+	content: '●';
+	display: block;
+	position: absolute;
+	color: #0098db;
+	top: 5px;
+	left: 20px;
+	font-size: 20px;
+}
+.vacine .col-2 .content .table-emails tbody tr.active, .vacine .col-2 .content .table-emails tbody tr:hover {
+	background-color: #cceaf8;
+}
+.vacine .col-2 .content .table-emails tfoot {
+	display: block;
+	background-color: #eeeeee;
+	overflow: hidden;
+	border-top: 1px solid #bebebe;
+	padding-right: 21px;
+}
+.vacine .col-2 .content .table-emails tfoot tr td {
+	width: 100%;
+	padding: 5px 20px 5px !important;
+	color: #bebebe;
+}
+.vacine .col-2 .content .email-box {
+	width: 680px;
+	padding: 20px;
+	box-sizing:border-box;
+	border: 1px solid #0098db;
+	margin-top: 15px;
+	font-size: 12px;
+}
+.vacine .col-2 .content .email-box .box-header {
+	overflow: hidden;
+}
+.vacine .col-2 .content .email-box .box-header img {
+	float: left;
+}
+.vacine .col-2 .content .email-box .box-header .box-right {
+	float: left;
+	margin-left: 20px;
+}
+.vacine .col-2 .content .email-box .box-header .box-right p {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+.vacine .col-2 .content .email-box .box-header .box-right h4 {
+	margin: 0;
+	margin-top: 5px;
+    font-size: 15px;
+}  
+.vacine .col-2 .content .email-box .box-header .box-right .date {
+	color: #bebebe;
+}
+.vacine .col-2 .content .email-box .to {
+	color: #bebebe;
+	border-bottom: 1px solid #bebebe;
+}
+.vacine .col-2 .content .email-box .box-body {
+	padding-top: 10px;
+}
+.vacine .col-2 .content .new-leter p {
+	display: inline-block;
+	font-size: 12px;
+}
+.vacine .col-2 .content .new-leter select, .vacine .col-2 .content .new-leter input {
+	width: 500px;
+	padding: 4px;
+	border: #bebebe 1px solid;
+	margin-right: 140px;
+	margin-left: 10px;
+}
+.vacine .col-2 .content .new-leter select {
+	margin-left: 41px;
+	padding: 3px;
+	width: 510px;
+}
+.vacine .col-2 .content .new-leter textarea {
+	width: 564px;
+	margin-top: 2em;
+	min-height: 200px;
+	border: #bebebe 1px solid;
+}
+.vacine .col-2 .content .new-leter .btn {
+	padding: 8px 25px;
+	margin-top: 2em;
+	color: white;
+	display: inline-block;
+    background-color: #0098db;
+    cursor: pointer;
+    border: 0;
+    width: auto;
+    margin-left: 0;
+}
+.vacine .content.plans {
+	padding-top: 2em; 
+}
+.vacine .content.plans h2 {
+	margin-bottom: 0;
+}
+.vacine .content .plans-form input {
+	width: 200px;
+	border: #bebebe 1px solid;
+	padding: 4px;
+	float: left;
+	display: block;
+}
+.vacine .content .plans-form {
+	margin-top: -5px;
+}
+.vacine .content .plans-form .btn {
+	padding: 5px 25px;
+	color: white;
+    background-color: #0098db;
+    cursor: pointer;
+    border: 0;
+    width: auto;
+    margin-left: 0;
+    margin-bottom: 0;
+    float: none;
+}
+.vacine .content .plan-option {
+	list-style: none;
+	padding: 0;
+	margin-top: 3em;
+	overflow: hidden;
+	margin-bottom: 0;
+}
+.vacine .content .plan-option li {
+	display: block;
+	float: left;
+	border: #bebebe 1px solid;
+	border-bottom: 0;
+}
+.vacine .content .plan-option li a {
+	padding: 8px 20px;
+	font-size: 12px;
+	display: block;
+}
+.vacine .content hr {
+	width: 100%;
+	height: 1px;
+	margin-bottom: 1px;
+	border: 0;
+	border-top: #bebebe 1px solid;
+	margin-top: 0;
+}
+.vacine .content .plans-container {
+	width: 100%;
+	min-height: 250px;
+}
+.vacine .content .error-message {
+	color: red;
+	font-size: 12px;
+}
+.vacine .content .video-list {
+	list-style: none;
+	padding: 0;
+	margin-top: 2em;
+}
+.vacine .content .video-list li {
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	display: inline-block;
+	margin-right: 9px;
+}
+.vacine .content .video-list li:last-child {
+	margin-right: 0;
+}
+.vacine .content .video-list li a {
+	padding: 0 45px;
+	display: block;
+	height: 60px;
+	/*border: 1px solid #bebebe;*/
+	box-sizing: border-box;
+}
+.vacine .content .video-list li.active a {
+	border-color: #0098db;
+}
+.vacine .content .video-play {
+	border: 2px solid #0098db;
+}
+.vacine .content .video-play iframe {
+	margin-bottom: -3px;
+}
+
+
+.girlAnimation {
+	-webkit-animation: AnimationName 1s ease infinite;
+	-moz-animation: AnimationName 1s ease infinite;
+	-o-animation: AnimationName 1s ease infinite;
+	animation: AnimationName 1s ease infinite;
+}
+
+	@-webkit-keyframes AnimationName {
+		0% { background:#96e100;}
+		/*50% { background: #96e100; }*/
+		50% { background: #FF8330; }
+		100% { background:#96e100; }
+	}
+
+	@-moz-keyframes AnimationName {
+		0% { background:#96e100;}
+		/*50% { background:#96e100; }*/
+		50% { background: #FF8330; }
+		100% { background:#96e100; }
+	}
+
+	@-o-keyframes AnimationName {
+		0% { background:#96e100;}
+		/*50% { background:#96e100; }*/
+		50% { background: #FF8330; }
+		100% { background:#96e100; }
+	}
+
+	@keyframes AnimationName {
+		0% { background:#96e100;}
+		/*50% { background:#96e100; }*/
+		50% { background: #FF8330; }
+		100% { background:#96e100; }
+	}
+
+/* Light grey */
+
+.ui.lightgrey.segment:not(.inverted) {
+	border-top: 2px solid #C8C8C8;
+}
+
+.ui.inverted.lightgrey.segment {
+	background-color: #C8C8C8 !important;
+	color: #ffffff !important;
+}
+
+/* Light blue */
+
+.ui.lightblue.segment:not(.inverted) {
+	border-top: 2px solid #92B5CE;
+}
+
+.ui.inverted.lightblue.segment {
+	background-color: #92B5CE !important;
+	color: #ffffff !important;
+}

@@ -1,0 +1,126 @@
+<html>
+	<head>
+		<script type='text/javascript' src="//code.jquery.com/jquery-2.1.4.min.js">
+</script>
+	</head>
+	<body>
+		<div>temperature:
+			<span id="output"></span> <br/><br/>button state max:
+			<input type="text" id="maxtemp" value="8">
+			<br />button state med:
+			<input type="text" id="mintemp" value="6">
+			<br />
+			<button id="restartButton">Restart</button>
+			<br />
+			<br />sterilizer start temp:
+			<input type="text" id="ster_start_temp" value="70">
+			<br />sterilizer max temp:
+			<input type="text" id="ster_max_temp" value="240">
+			<br />sterilizer target temp:
+			<input type="text" id="ster_target_temp" value="170">
+			<br />sterilizer auto decrement value:
+			<input type="text" id="ster_decrement_temp" value="20">
+			<br />
+			<br />
+			<br />switcher 1:
+			<div>
+				<input type="radio" name="switcher1" value="off" checked>Off
+				<br>
+				<input type="radio" name="switcher1" value="">Low
+				<br>
+				<input type="radio" name="switcher1" value="high">High
+				<br>
+			</div>switcher 2:
+			<div>
+				<input type="radio" name="switcher2" value="off" checked>Off
+				<br>
+				<input type="radio" name="switcher2" value="">Low
+				<br>
+				<input type="radio" name="switcher2" value="high">High
+				<br>
+			</div>switcher 3:
+			<div>
+				<input type="radio" name="switcher3" value="off" checked>Off
+				<br>
+				<input type="radio" name="switcher3" value="">Low
+				<br>
+				<input type="radio" name="switcher3" value="high">High
+				<br>
+			</div>switcher 4:
+			<div>
+				<input type="radio" name="switcher4" value="off" checked>Off
+				<br>
+				<input type="radio" name="switcher4" value="">Low
+				<br>
+				<input type="radio" name="switcher4" value="high">High
+				<br>
+			</div>switcher 5:
+			<div>
+				<input type="radio" name="switcher5" value="off" checked>Off
+				<br>
+				<input type="radio" name="switcher5" value="">Low
+				<br>
+				<input type="radio" name="switcher5" value="high">High
+				<br>
+			</div>
+		</div>
+		<script type='text/javascript'>
+			var currentTemp = 0;
+			var maxTemp, minTemp, sterMaxTemp,sterTargetTemp, sterStartTemp, sterDecrementValue;
+			var calculationTimeout;
+			
+			$(function() {
+							$("#restartButton").click(function() {
+				restart();
+			});
+			
+			function restart(){
+				maxTemp = parseInt($("#maxtemp").val(), 10);
+				minTemp = parseInt($("#mintemp").val(), 10);
+				sterStartTemp = parseInt($("#ster_start_temp").val(), 10);
+				sterMaxTemp = parseInt($("#ster_max_temp").val(), 10);
+				sterTargetTemp = parseInt($("#ster_target_temp").val(), 10);
+				sterDecrementValue = parseInt($("#ster_decrement_temp").val(), 10);
+				
+				currentTemp = parseInt($('#ster_start_temp').val(), 10);
+				
+				if (calculationTimeout) {
+					clearInterval(calculationTimeout);
+				}
+				
+				calculationTimeout = setInterval(stepCalculation, 2000);
+				
+			}
+			
+			function stepCalculation() {
+				for (var i =0; i < 5; i++) {
+					currentTemp = currentTemp + getSwitcherValue(i+1);
+				}
+				
+				currentTemp = Math.max(currentTemp - sterDecrementValue, sterStartTemp);
+				
+				if (currentTemp > sterMaxTemp) {
+					currentTemp = sterStartTemp;
+				}
+				
+				$('#output').text(currentTemp);
+			}
+
+			function getSwitcherValue(ind) {
+				var val = document.querySelector('input[name="switcher' + ind.toString() + '"]:checked').value;
+				
+				if (val === "") {
+					return minTemp;
+				}
+				
+				if (val === "high") {
+					return maxTemp;
+				}
+				
+				return 0;
+			}
+			});
+		</script>
+	</body>
+
+</html>

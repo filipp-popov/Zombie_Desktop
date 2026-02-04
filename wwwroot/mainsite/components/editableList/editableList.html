@@ -1,0 +1,12 @@
+﻿<span ng-repeat="item in items">
+{{item}}
+<span ng-click="removeItem(item)">X</span>
+</span>
+
+<div ng-show="addNewVisible">
+	<input type="text" ng-model="newValue" /> 
+	<button ng-click="addValue(newValue)">Сохранить</button>
+</div>
+
+<button ng-show="!addNewVisible" type="text" ng-click="addNewVisible = !addNewVisible">Добавить</button> 
+<button ng-show="addNewVisible" type="text" ng-click="addNewVisible = !addNewVisible">Отмена</button> 

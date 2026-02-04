@@ -1,0 +1,14 @@
+﻿<br />
+ <textarea ng-if="isPost"  ng-model="bodyText"> </textarea> 
+
+<span style="color: blue"> <strong>На локальный веб-сервер ОТ платы:</strong> <a ng-click="sendRequest(Targets.fromControlUnitToLocal)">{{getUrl(Targets.fromControlUnitToLocal)}} </a>
+</span>
+<span style="color: red" ng-if="can_send_to_control_unit">
+<br />
+	<strong>От локального веб-сервера НА плату: </strong> <a ng-click="sendRequest(Targets.fromLocalToControlUnit)">{{getUrl(Targets.fromLocalToControlUnit)}} </a>
+</span>
+<span style="color: green" ng-if="can_send_to_control_unit">
+<br />
+	<strong>На локальный веб-сервер ДЛЯ платы: </strong> <a ng-click="sendRequest(Targets.fromOutsideToLocalForControlUnit)">{{getUrl(Targets.fromOutsideToLocalForControlUnit)}} </a>
+</span>
+<br />

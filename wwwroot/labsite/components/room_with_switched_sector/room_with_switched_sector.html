@@ -1,0 +1,20 @@
+<span  
+       ng-style='style'
+       ng-mouseenter="mouseEnter()"
+       ng-mouseleave="mouseLeave(i)"
+       ng-click='turn()'> 
+</span>
+	<span 
+		ng-repeat="sonarObject in switcher.sonarObjects" 
+        
+        ng-mouseenter="mouseEnter()"
+        ng-mouseleave="mouseLeave(i)"
+        ng-click='turn()'
+		
+        data-room-left-top="switcher.leftTop" 
+		data-room-right-bottom="switcher.bottomRight" 		
+		data-sonar-object="sonarObject"
+		data-cell-height="cellHeight" 
+		data-cell-width="cellWidth"
+        data-room-active="switcher.isActive"
+        ></span>

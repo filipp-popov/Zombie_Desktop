@@ -1,0 +1,21 @@
+{
+  "base": "",
+  "paths": {
+    "source": {
+      "config": "wwwroot/theme.config",
+      "definitions": "wwwroot/definitions/",
+      "site": "wwwroot/labsite/",
+      "themes": "wwwroot/themes/"
+    },
+    "output": {
+      "packaged": "wwwroot/labsite/",
+      "uncompressed": "wwwroot/labsite/components/",
+      "compressed": "wwwroot/labsite/components/",
+      "themes": "wwwroot/labsite/themes/"
+    },
+    "clean": "dist/"
+  },
+  "permission": false,
+  "rtl": false,
+  "version": "2.2.13"
+}

@@ -1,0 +1,20 @@
+﻿<div ng-repeat="(areaName, groupings) in ::areaValidators">
+	<span ng-click="cfg.areaToShow = areaName" style="font-size:x-large; position:absolute; top:50px; color:red; width:100%; z-index:100;" ng-style="{left: {{500 + $index * 100}} + 'px', 'text-decoration': cfg.areaToShow === areaName ? 'underline' : 'none'}" >{{areaName}}</span>
+
+	<div ng-show="cfg.areaToShow === areaName" style="position:absolute; top:150px;">
+		<span ng-repeat="grouping in ::groupings">
+			<a style="color: red" ng-click="scrollToElement(areaName + $index)">{{grouping.name}}</a>
+			<span ng-show="!$last"> | </span>
+		</span>
+
+		<div ng-repeat="grouping in ::groupings">
+			<h1 ng-attr-id="{{areaName + $index}}"> {{grouping.name}} </h1>
+			
+			<div ng-repeat="(eventId, event) in ::grouping.events">
+				<div data-clickable-request data-area="areaName" data-event-id="eventId" data-event-description="event"> {{eventId}} </div>
+			</div>
+		</div>
+
+	</div>
+
+</div>

@@ -1,0 +1,550 @@
+[
+    {
+        "name": "Режимы игры",
+        "events": {
+            "game_status": {
+                "default_value": "maintenance",
+                "type": "predefined",
+                "possible_values": [
+                    "maintenance",
+                    "ready",
+                    "game_started"
+                ],
+                "can_send_to_control_unit": true,
+                "description": "Текущий режим игры"
+            }
+        }
+    },
+    {
+        "name": "Пневмопочта на отправку",
+        "events": {
+            "key_air_tube_correct_input": {
+                "default_value": false,
+                "type": "boolean",
+                "can_send_to_control_unit": false,
+                "description": "Колба с правильным предметом появилась/исчезла"
+            },
+            "key_air_tube_button_pressed": {
+                "default_value": false,
+                "type": "boolean",
+                "can_send_to_control_unit": false,
+                "description": "Нажата кнопка отправки"
+            },
+            "key_air_tube_building_value": {
+                "default_value": "",
+                "type": "string",
+                "can_send_to_control_unit": true,
+                "description": "Значение Корпус изменено"
+            },
+            "key_air_tube_floor_value": {
+                "default_value": "",
+                "type": "string",
+                "can_send_to_control_unit": true,
+                "description": "Значение Этаж изменено"
+            },
+            "key_air_tube_room_value": {
+                "default_value": "",
+                "type": "string",
+                "can_send_to_control_unit": true,
+                "description": "Значение Помещение изменено"
+            },
+            "key_air_tube_lock_on": {
+                "default_value": false,
+                "type": "boolean",
+                "can_send_to_control_unit": true,
+                "description": "Включение/выключение магнита на дверце для колбы"
+            },
+            "key_air_tube_completed": {
+                "default_value": false,
+                "type": "boolean",
+                "can_send_to_control_unit": false,
+                "description": "Успешный исход"
+            },
+            "key_air_tube_wrong_item": {
+                "default_value": false,
+                "type": "boolean",
+                "can_send_to_control_unit": false,
+                "description": "Правильный адресат, неправильный предмет"
+            }
+        }
+    },
+    {
+        "name": "Пневмопочта на получение от девочки",
+        "events": {
+            "girl_air_tube_lock_on": {
+                "default_value": false,
+                "type": "boolean",
+                "can_send_to_control_unit": true,
+                "description": "Магнитный замок включен/выключен"
+            }
+        }
+    },
+    {
+        "name": "Пневмопочта на получение финальной карточки",
+        "events": {
+            "final_card_air_tube_lock_on": {
+                "default_value": false,
+                "type": "boolean",
+                "can_send_to_control_unit": true,
+                "description": "Магнитный замок включен/выключен"
+            }
+        }
+    },
+    {
+        "name": "Автоклав",
+        "events": {
+            "sterilizer_lock_on": {
+                "default_value": false,
+                "type": "boolean",
+                "can_send_to_control_unit": true,
+                "description": "Магнитный замок на двери включен/выключен"
+            },
+            "sterilizer_switch_1_state": {
+                "default_value": "off",
+                "type": "predefined",
+                "possible_values": [
+                    "off",
+                    "medium",
+                    "high"
+                ],
+                "can_send_to_control_unit": false,
+                "description": "Состояние переключателя номер 1"
+            },
+            "sterilizer_switch_2_state": {
+                "default_value": "off",
+                "type": "predefined",
+                "possible_values": [
+                    "off",
+                    "medium",
+                    "high"
+                ],
+                "can_send_to_control_unit": false,
+                "description": "Состояние переключателя номер 2"
+            },
+            "sterilizer_switch_3_state": {
+                "default_value": "off",
+                "type": "predefined",
+                "possible_values": [
+                    "off",
+                    "medium",
+                    "high"
+                ],
+                "can_send_to_control_unit": false,
+                "description": "Состояние переключателя номер 3"
+            },
+            "sterilizer_switch_4_state": {
+                "default_value": "off",
+                "type": "predefined",
+                "possible_values": [
+                    "off",
+                    "medium",
+                    "high"
+                ],
+                "can_send_to_control_unit": false,
+                "description": "Состояние переключателя номер 4"
+            },
+            "sterilizer_switch_5_state": {
+                "default_value": "off",
+                "type": "predefined",
+                "possible_values": [
+                    "off",
+                    "medium",
+                    "high"
+                ],
+                "can_send_to_control_unit": false,
+                "description": "Состояние переключателя номер 5"
+            },
+            "sterilizer_panel_1_state": {
+                "default_value": "off",
+                "type": "predefined",
+                "possible_values": [
+                    "off",
+                    "blue",
+                    "orange"
+                ],
+                "can_send_to_control_unit": false,
+                "description": "Состояние панели номер 1"
+            },
+            "sterilizer_panel_2_state": {
+                "default_value": "off",
+                "type": "predefined",
+                "possible_values": [
+                    "off",
+                    "blue",
+                    "orange"
+                ],
+                "can_send_to_control_unit": false,
+                "description": "Состояние панели номер 2"
+            },
+            "sterilizer_panel_3_state": {
+                "default_value": "off",
+                "type": "predefined",
+                "possible_values": [
+                    "off",
+                    "blue",
+                    "orange"
+                ],
+                "can_send_to_control_unit": false,
+                "description": "Состояние панели номер 3"
+            },
+            "sterilizer_panel_4_state": {
+                "default_value": "off",
+                "type": "predefined",
+                "possible_values": [
+                    "off",
+                    "blue",
+                    "orange"
+                ],
+                "can_send_to_control_unit": false,
+                "description": "Состояние панели номер 4"
+            },
+            "sterilizer_panel_5_state": {
+                "default_value": "off",
+                "type": "predefined",
+                "possible_values": [
+                    "off",
+                    "blue",
+                    "orange"
+                ],
+                "can_send_to_control_unit": false,
+                "description": "Состояние панели номер 5"
+            },
+            "sterilizer_panel_temperature": {
+                "default_value": 70,
+                "type": "number",
+                "can_send_to_control_unit": false,
+                "description": "Температура вычислена"
+            },
+            "sterilizer_max_temperature_reached": {
+                "default_value": false,
+                "type": "boolean",
+                "can_send_to_control_unit": false,
+                "description": "Максимальная температура достигнута"
+            },
+            "sterilizer_completed": {
+                "default_value": false,
+                "type": "boolean",
+                "can_send_to_control_unit": true,
+                "description": "Успешная концовка"
+            }
+        }
+    },
+    {
+        "name": "Дверь в бункер",
+        "events": {
+            "prison_lock_on": {
+                "default_value": false,
+                "type": "boolean",
+                "can_send_to_control_unit": true,
+                "description": "Магнитный замок на двери включен/выключен"
+            },
+            "prison_lock_active_algo_number": {
+                "default_value": "1",
+                "type": "predefined",
+                "possible_values": [
+                    "1",
+                    "2",
+                    "3",
+                    "4",
+                    "5"
+                ],
+                "can_send_to_control_unit": false,
+                "description": "Номер активного алгоритма"
+            },
+            "prison_left_valve_succeeded_action_number": {
+                "default_value": "0",
+                "type": "predefined",
+                "possible_values": [
+                    "0",
+                    "1",
+                    "2",
+                    "3",
+                    "4",
+                    "5"
+                ],
+                "can_send_to_control_unit": false,
+                "description": "Маневр номер N левого замка успешно завершен"
+            },
+            "prison_right_valve_succeeded_action_number": {
+                "default_value": "0",
+                "type": "predefined",
+                "possible_values": [
+                    "0",
+                    "1",
+                    "2",
+                    "3",
+                    "4",
+                    "5"
+                ],
+                "can_send_to_control_unit": false,
+                "description": "Маневр номер N правого замка успешно завершен"
+            },
+            "prison_correct_input": {
+                "default_value": false,
+                "type": "boolean",
+                "can_send_to_control_unit": false,
+                "description": "Маневры успешно выполнены / Прерывание успешной серии маневров"
+            }
+        }
+    },
+    {
+        "name": "Аварийное освещение",
+        "events": {
+            "main_light_on": {
+                "default_value": false,
+                "type": "boolean",
+                "can_send_to_control_unit": true,
+                "description": "Основной свет включен/выключен"
+            },
+            "prison_light_on": {
+                "default_value": false,
+                "type": "boolean",
+                "can_send_to_control_unit": true,
+                "description": "Свет в тюрьме с зомби включен/выключен"
+            }
+        }
+    },
+    {
+        "name": "Финальный ящик",
+        "events": {
+            "final_box_lock_on": {
+                "default_value": false,
+                "type": "boolean",
+                "can_send_to_control_unit": true,
+                "description": "Магнит на двери включен/выключен"
+            },
+            "final_box_reagent_placed": {
+                "default_value": false,
+                "type": "boolean",
+                "can_send_to_control_unit": false,
+                "description": "Колба из автоклава стоит на своем месте  / стоит не на своем месте "
+            },
+            "final_box_catalyst_placed": {
+                "default_value": false,
+                "type": "boolean",
+                "can_send_to_control_unit": false,
+                "description": "Колба из пневмопочты стоит стоит на своем месте  / стоит не на своем месте "
+            },
+            "final_box_in_progress": {
+                "default_value": false,
+                "type": "boolean",
+                "can_send_to_control_unit": true,
+                "description": "Процесс запущен / не запущен"
+            },
+            "final_box_finished": {
+                "default_value": false,
+                "type": "boolean",
+                "can_send_to_control_unit": true,
+                "description": "Задание завершено / не завершено"
+            }
+        }
+    },
+    {
+        "name": "Считыватель на столе профессора",
+        "events": {
+            "final_box_identified": {
+                "default_value": false,
+                "type": "boolean",
+                "can_send_to_control_unit": false,
+                "description": "Карточка из пневмопочты была /не была поднесена к считывателю  за время со старта игры"
+            },
+            "final_box_card_renew": {
+                "default_value": false,
+                "type": "boolean",
+                "can_send_to_control_unit": true,
+                "description": "Запомнить новую карточку"
+            },
+            "final_box_card_active": {
+                "default_value": false,
+                "type": "boolean",
+                "can_send_to_control_unit": true,
+                "description": "Включить считыватель на столе профессора"
+            }
+        }
+    },
+    {
+        "name": "Отслеживание людей",
+        "events": {
+            "sonar_calibration": {
+                "default_value": [],
+                "type": "none",
+                "can_send_to_control_unit": true,
+                "description": "Данные об области слежения камер",
+                "answer": {
+                    "type": "array",
+                    "array_item": {
+                        "cam_id": {
+                            "type": "number"
+                        },
+                        "left_up_coords": {
+                            "type": "coords"
+                        },
+                        "right_down_coords": {
+                            "type": "coords"
+                        }
+                    }
+                },
+                "example_answer": [
+                    {
+                        "cam_id": 0,
+                        "left_up_coords": [
+                            -5,
+                            -3
+                        ],
+                        "right_down_coords": [
+                            8,
+                            4
+                        ]
+                    },
+                    {
+                        "cam_id": 5,
+                        "left_up_coords": [
+                            -3.2,
+                            -6.1
+                        ],
+                        "right_down_coords": [
+                            3.5,
+                            2.44
+                        ]
+                    }
+                ]
+            },
+            "sonar": {
+                "method": "post",
+                "default_value": [],
+                "type": "array",
+                "can_send_to_control_unit": false,
+                "description": "Координаты людей от камер",
+                "body": {
+                    "type": "array",
+                    "array_item": {
+                        "cam_id": {
+                            "type": "number"
+                        },
+                        "coords": {
+                            "type": "coords"
+                        }
+                    }
+                },
+                "example_body": [
+                    {
+                        "cam_id": 5,
+                        "coords": [
+                            -4,
+                            2
+                        ]
+                    },
+                    {
+                        "cam_id": 5,
+                        "coords": [
+                            2.2,
+                            1.2
+                        ]
+                    },
+                    {
+                        "cam_id": 5,
+                        "coords": [
+                            -1.2,
+                            0.23
+                        ]
+                    },
+                    {
+                        "cam_id": 0,
+                        "coords": [
+                            3.2,
+                            1.2
+                        ]
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "name": "Девочка в вентиляции",
+        "events": {
+            "girl_escape_state": {
+                "method": "post",
+                "default_value": {},
+                "type": "object",
+                "can_send_to_control_unit": false,
+                "description": "Состояние игровой области",
+                "body": {}
+            }
+        }
+    },
+    {
+        "name": "Служебные запросы",
+        "events": {
+            "raspberry": {
+                "default_value": "",
+                "type": "predefined",
+                "possible_values": [
+                    "",
+                    "shutdown",
+                    "reset"
+                ],
+                "can_send_to_control_unit": true,
+                "description": "Выключить / перезагрузить головную плату"
+            },
+            "game_language": {
+                "default_value": "ru",
+                "type": "predefined",
+                "possible_values": [
+                    "en",
+                    "ru",
+                    "es",
+					"de"
+                ],
+                "can_send_to_control_unit": true,
+                "description": "Сменить язык игры"
+            },
+            "play_sound": {
+                "default_value": "",
+                "type": "string",
+                "can_send_to_control_unit": true,
+                "description": "Проиграть звуковой файл"
+            },
+            "input_lock_on": {
+                "default_value": false,
+                "type": "boolean",
+                "can_send_to_control_unit": true,
+                "description": "Открыть входную дверь"
+            }
+        }
+    },
+    {
+        "name": "Подсказки",
+        "events": {
+            "hint_ventilation_sounds": {
+                "default_value": "false",
+                "type": "boolean",
+                "can_send_to_control_unit": true,
+                "description": "Мы слышим какие-то звуки в вентиляции нашего этажа. Кажется, там выживший."
+            },
+            "hint_stop_emailing": {
+                "default_value": "false",
+                "type": "boolean",
+                "can_send_to_control_unit": true,
+                "description": "У вас и так мало времени, прекратите нам писать!"
+            },
+            "hint_do_not_use_force": {
+                "default_value": "false",
+                "type": "boolean",
+                "can_send_to_control_unit": true,
+                "description": "Не стоит применять силу"
+            },
+            "hint_sterilize_10_seconds": {
+                "default_value": "false",
+                "type": "boolean",
+                "can_send_to_control_unit": true,
+                "description": "Для получения реагента нужно простерилизовать его в течение 10 секунд при температуре 170 градусов"
+            },
+            "hint_blow_the_lock": {
+                "default_value": "false",
+                "type": "boolean",
+                "can_send_to_control_unit": true,
+                "description": "Попробуйте взорвать замок"
+            }
+        }
+    }
+]

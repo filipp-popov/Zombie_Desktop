@@ -1,0 +1,105 @@
+{
+	"language": "es",
+	"emails": {
+		"algorythmChanged": {
+			"title": "[TODO - ES]Security algorythm changed",
+			"from": "[TODO - ES]Security system",
+			"to": "[TODO - ES]Laboratory personnel",
+			"bodyStrings": ["<h1>New security access sequence</h1> <br /><table class='ui definition table center aligned email-table'>"
+						,"<thead>"
+						, "<tr><th>", "", "</th><th>", "DOOR LEFT VALVE", "</th><th>", "DOOR RIGHT VALVE", "</th></tr>"
+						, "</thead>"
+						, "<tbody>"
+						, "<tr><td class='email-table-title'>", "STEP 1:", "</td><td>","<img src='img/{l0}.png'/>", "</td><td>", "<img src='img/{r0}.png'/>", "</td></tr>"
+						, "<tr><td class='email-table-title'>", "STEP 2:", "</td><td>","<img src='img/{l1}.png'/>", "</td><td>", "<img src='img/{r1}.png'/>", "</td></tr>"
+						, "<tr><td class='email-table-title'>", "STEP 3:", "</td><td>","<img src='img/{l2}.png'/>", "</td><td>", "<img src='img/{r2}.png'/>", "</td></tr>"
+						, "<tr><td class='email-table-title'>", "STEP 4:", "</td><td>","<img src='img/{l3}.png'/>", "</td><td>", "<img src='img/{r3}.png'/>", "</td></tr>"
+						, "<tr><td class='email-table-title'>", "STEP 5:", "</td><td>","<img src='img/{l4}.png'/>", "</td><td>", "<img src='img/{r4}.png'/>", "</td></tr>"
+						, "</tbody>"
+						, "</table>"]},
+						
+		"initialEmail": {
+			"title": "[TODO - ES]Re: настройка автоклава",
+			"from": "[TODO - ES]Mark Spears",
+			"to": "[TODO - ES]Alex Schwartz",
+			"bodyStrings": ["[TODO - ES]Алекс, я настроил автоклав под твои данные. <br /> <br />",
+						"К сожалению полностью автоматизировать не получилось, придется выставлять температуру вручную.",
+						"Но по крайней мере не будет риска испортить реагент <br /><br />",
+						"И да, поздравляю с прорывом! Думаю, после окончания синтеза вакцины, тебе придется покупать отдельный склад для всех твоих наград и медалей.",
+						" <br /><br /><br /> С уважением, Марк Спирс"]},
+						
+		"initialSentEmail": {
+			"title": "[TODO - ES]настройка автоклава",
+			"from": "[TODO - ES]Alex Schwartz",
+			"to": "[TODO - ES]Mark Spears",
+			"bodyStrings": ["[TODO - ES]Марк, мне нужно чтобы ты настроил автоклав на краевые значения, которые лежат на общем ftp в моей папке под именем sterilizer.tx. <br />" ,
+						"Я должен быть абсолютно уверен, что исключен любой риск повреждения реагента. В идеале автоклав должен сам выставлять нужную температуру и поддерживать ее. ",
+						"Текущая система немного раздражает, особенно сейчас, когда я так близок к результату.",
+						" <br /><br /><br /> Алекс"]},
+						
+		"stopBothering": [
+			""
+		],
+        
+        "addresses":  ["Mark Spears &lt;mspears@lab.com&gt;", "TODO1 &lt;todo1@lab.com&gt;", "TODO2 &lt;todo2@lab.com&gt;", "TODO3 &lt;todo3@lab.com&gt;"]
+	},
+	"strings": {
+		"mark_name": "Mark Spears",
+		"vaccine_creation": "Vaccine creation",
+		"email": "Email",
+		"strain": "Strain",
+		"catalyst": "Catalyst",
+		"active_component": "Active component", 
+		"compose_email": "Compose message",
+		"inbox": "Inbox",
+		"email_from": "From",
+		"email_subject": "Subject",				
+		"email_date": "Date",		
+		"email_to": "To",	
+		"email_retention_policy": "Message earlier {0} were removed due to corporate security policy.",
+		"total_emails": "{0} emails total",
+        "professor_name": "Alex Schwartz",				
+		
+		"zcreation:load_components": "Load components",
+		"zcreation:identify_yourself": "Identify yourself",		
+		"zcreation:process_started": "Process started",	
+		"zcreation:enter_strain_tooltip": "Enter strain here",
+		"zcreation:check_strain": "Check",
+		"zcreation:strain_not_found": "Strain not found",
+		"zcreation:strain_loading": "Strain loading",
+		"zcreation:strain_loaded": "Strain loaded",
+		"zcreation:catalyst_not_found": "Catalyst is not found",
+		"zcreation:put_catalyst_into_box": "Please put the catalyst into the 'Catalist here' box",
+		"zcreation:catalyst_loaded": "Catalyst is successfully loaded",
+		"zcreation:active_component_not_found": "Active component is not found",
+		"zcreation:put_active_component_into_box": "Please put the active component into the 'Active component here' box",
+		"zcreation:active_component_loaded": "Active component is successfully loaded",
+		"zcreation:smart_card": "Smart Card",
+		"zcreation:please_scan_smart_card": "Please scan your smart card with 'Smart Cards' scanner",
+		"zcreation:create_vaccine": "Create vaccine",
+		
+		"login:login_caption": "Log-in to your account",
+        "login:error": "Incorrect password",        
+		"login:login": "Login",
+		"login:login_tooltip": "Login",
+		"login:password_hint": "Children are the flowers of our lives",
+		"login:password_tooltip": "Password",
+        "login:stuff": "Staff",
+        "login:description": "Experimental research departmnent",  
+		
+		"sent_emails:caption": "Sent emails",
+		
+		"compose:email:caption": "Compose new message",
+		
+		"cameras:video_monitoring": "Video monitoring",
+		
+		"cameras:plans": "Plans",
+		
+		"plans:show_plan" : "Show Plan",
+		"plans:not_found": "Plan not found",
+        
+        "girlEscape:maximumPowerSupply": "Maximum power supply reached!",
+        "girlEscape:roomsPowered": "Rooms powered",
+        "girlEscape:generator": "Electricity generator"       		
+	}
+}

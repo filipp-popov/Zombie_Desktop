@@ -1,0 +1,140 @@
+<!--<ul class="nav">-->
+<!--<li>-->
+<!--<a href="#/cameras">{{"cameras:video_monitoring" | localized}}</a>-->
+<!--</li>-->
+<!--<li class="active">-->
+<!--<a href="#/plans">{{"cameras:plans" | localized}}</a>-->
+<!--</li>-->
+<!--</ul>-->
+<style type="text/css">
+
+</style>
+<div ng-if="isObserver" style="color: red">
+    {{'plans:game_description' | localized}}
+</div>
+<div class="ui fluid two item top attached tabular menu blue" ng-if="!isObserver">
+    <a class="item" data-tab="first" href="#/cameras">{{"cameras:video_monitoring" | localized}}</a>
+    <a class="item active" data-tab="second" href="#/plans">{{"cameras:plans" | localized}}</a>
+</div>
+<div class="ui bottom attached tab segment active plan-floor" data-tab="second" style="min-height: 800px;">
+    <div class="ui fluid big action input" ng-if="!isObserver">
+        <input type="text" placeholder="Введите номер этажа..." ng-model="planNumber" ng-keyup="$event.keyCode === 13 && ctrl.showPlan(planNumber)">
+        <div class="ui button" ng-click="ctrl.showPlan(planNumber)">{{'plans:show_plan' | localized}}</div>
+        <br/>
+    </div>
+    <div ng-if="!isObserver" class="ui pointing red basic label" ng-style="{'visibility': ctrl.isError ? 'visible' : 'hidden' }">
+        {{'plans:not_found' | localized}}
+    </div>
+
+    <h2 class="ui center aligned  header">{{'plans:header_plan' | localized}} <span class="blue">{{selectedPlanNumber}}</span>
+        <div class="sub header">
+            {{'plans:detector_active' | localized}}
+        </div>
+    </h2>
+    <div class="girl-plan-floor">
+        <span ng-repeat="switcher in switchers" room-with-switched-sector="switcher" data-cell-height="sizes.cellHeight" data-cell-width="sizes.cellWidth"> </span>
+
+        <span ng-repeat="cell in cellsInGame"
+              pipe-sector data-x-coord="cell.coords[0]"
+              data-y-coord="cell.coords[1]"
+              data-cell-height="sizes.cellHeight"
+              data-cell-width="sizes.cellWidth"
+              data-girl-dot-radius="sizes.girlDotRadius"> </span>
+
+        <span ng-repeat="actor in getRandomActors()" 
+              data-sonar-object="actor"
+              data-is-random-actor="true"
+              data-cell-height="sizes.cellHeight"
+              data-cell-width="sizes.cellWidth"></span>
+
+        <span ng-if="!gameDone" data-sonar-object="girlObject" data-cell-height="sizes.cellHeight" data-cell-width="sizes.cellWidth"> 
+	</span>
+    </div>
+
+    <div class="girl-plan-description">
+        <table>
+            <tr>
+                <td><img ng-src="{{'img/' + getBattaryImageName()}}" /></td>
+                <td>
+                    <h5 class="ui header">
+                        {{"girlEscape:generator" | localized}}
+                        <div class="sub header">
+                            <span ng-show="maxSwitchedRooms === poweredRooms.length" style="color:red">{{"girlEscape:maximumPowerSupply" | localized}}</span>
+                        </div>
+                    </h5>
+                </td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td> </td>
+            </tr>
+            <tr>
+                <td style="vertical-align: top;">
+                    <div class="round-point green-point"></div>
+                </td>
+                <td>
+                    <h5 class="ui header">
+                        {{'plans:not_infected_header' | localized}}
+                        <div class="sub header">
+                            {{'plans:not_infected_header' | localized}}
+                        </div>
+                    </h5>
+                </td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td> </td>
+            </tr>
+            <tr>
+                <td style="vertical-align: top;">
+                    <div class="round-point red-point"></div>
+                </td>
+                <td>
+                    <h5 class="ui header">
+                        {{'plans:infected_header' | localized}}
+                        <div class="sub header">
+                            {{'plans:infected_description' | localized}}
+                        </div>
+                    </h5>
+                </td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td> </td>
+            </tr>
+            <tr>
+                <td style="vertical-align: top;">
+                    <div class="round-point girlAnimation">
+                    </div>
+                </td>
+                <td>
+                    <h5 class="ui header">
+                        {{'plans:mutating_header' | localized}}
+                        <div class="sub header">
+                            {{'plans:mutating_header' | localized}}
+                        </div>
+                    </h5>
+                </td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td> </td>
+            </tr>
+            <tr>
+                <td style="vertical-align: top;">
+                    <div class="round-point black-point">
+                    </div>
+                </td>
+                <td>
+                    <h5 class="ui header">
+                        {{'plans:died_header' | localized}}
+                        <div class="sub header">
+                            {{'plans:died_description' | localized}}
+                        </div>
+                    </h5>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+</div>

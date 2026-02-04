@@ -1,0 +1,536 @@
+{
+	"cellWidth": 40,
+	"cellHeight": 40,
+	"girlDotRadius": 10,
+	"girlInitialCoords": [2, 8],
+	"maxSwitchedRooms": 4,
+	"cellsInGame" : [
+                    
+                     [2,  1], [3,  1], [4,  1], [5,  1], [6,  1], [7,  1], [8,  1],
+                     [2,  2],                   [5,  2],                   [8,  2], 
+                     [2,  3],                   [5,  3],                   [8,  3],
+                     [2,  4],                   [5,  4],                   [8,  4],  
+                     [2,  5],                   [5,  5],                   [8,  5],   
+            [1,  6], [2,  6],                   [5,  6], [6,  6], [7,  6], [8,  6], 
+            [1,  7],                                                       [8,  7], 
+            [1,  8], [2,  8], [3,  8],                                     [8,  8],
+            [1,  9],                                                       [8,  9],
+            [1, 10],                                                       [8, 10],
+            [1, 11], [2, 11], [3, 11], [4, 11], [5, 11], [6, 11], [7, 11], [8, 11]
+            
+	],															  
+	"fans" : [[1, 6], [1, 11]],
+	"switchers": [{
+					"id": 1,
+					"name" : "0_0 => 3_2",
+					"isActive" : false,
+					"leftTop" : [0, 0],
+					"bottomRight" : [3, 2],
+					"leverCoordRelative" : [1, 0],
+					"sonarObjects": []						
+				}, 
+                {
+					"id": 2,
+					"name" : "4_0 => 5_2",
+					"isActive" : false,
+					"leftTop" : [4, 0],
+					"bottomRight" : [5, 2],
+					"leverCoordRelative" : [1, 0],
+					"sonarObjects": []						
+				}, 
+                {
+					"id": 3,
+					"name" : "6_0 => 9_2",
+					"isActive" : true,
+					"leftTop" : [6, 0],
+					"bottomRight" : [9, 2],
+					"leverCoordRelative" : null,
+					"sonarObjects": [
+                        {"type": "patrol", "route": [[8.2, 1.8], [6.2, 1.8], [6.2, 0.2]]},
+						{"type": "civilian_worker", "coords": [7.5, 1.0] },
+						{"type": "civilian_worker", "coords": [8.5, 1.4] }  
+                    ]						
+				}, 
+                {
+					"id": 4,
+					"name" : "0_3 => 5_4",
+					"isActive" : true,
+					"leftTop" : [0, 3],
+					"bottomRight" : [5, 4],
+					"leverCoordRelative" : null,
+					"sonarObjects": [
+						{"type": "zombie", "coords": [1.5, 4.3]},
+						{"type": "zombie", "coords": [3.0, 2.5]},
+                        {"type": "zombie", "coords": [4.5, 3.5]}
+					]			
+				}, 
+                {
+					"id": 5,
+					"name" : "6_3 => 9_4",
+					"isActive" : false,
+					"leftTop" : [6, 3],
+					"bottomRight" : [9, 4],
+					"leverCoordRelative" : [1, 0]		
+				}, 
+                {
+					"id": 6,
+					"name" : "0_5 => 3_6",                    
+					"isActive" : false,
+					"leftTop" : [0, 5],
+					"bottomRight" : [3, 6],
+					"leverCoordRelative" : [0, 0],
+					"sonarObjects": [					]			
+				},
+                {
+					"id": 7,
+					"name" : "4_5 => 5_8",
+                    "noOwnWalls": true,
+					"isActive" : false,
+					"leftTop" : [4, 5],
+					"bottomRight" : [5, 8],
+					"leverCoordRelative" : null,
+					"sonarObjects": []			
+				}, 
+                {
+					"id": 8,
+					"name" : "6_5 => 9_6",                    
+					"isActive" : false,
+					"leftTop" : [6, 5],
+					"bottomRight" : [9, 6],
+					"leverCoordRelative" : [0, 0],
+					"sonarObjects": []		
+				},
+                {
+					"id": 9,
+					"name" : "0_7 => 3_8",                    
+					"isActive" : false,
+					"leftTop" : [0, 7],
+					"bottomRight" : [3, 8],
+					"leverCoordRelative" : [0, 0],
+					"sonarObjects": []		
+				},
+                {
+					"id": 10,
+					"name" : "6_7 => 9_8",                    
+					"isActive" : false,
+					"leftTop" : [6, 7],
+					"bottomRight" : [9, 8],
+					"leverCoordRelative" : [0, 0],
+					"sonarObjects": []		
+				},
+                {
+					"id": 11,
+					"name" : "coridor on video",   
+                    "noOwnWalls": true,                                     
+					"isActive" : false,
+					"leftTop" : [0, 9],
+					"bottomRight" : [9, 10],
+					"leverCoordRelative" : null,
+					"sonarObjects": [
+                        {"type": "corpse", "coords": [2.0, 8.5]}
+                    ]		
+				},
+                {
+					"id": 12,
+					"name" : "0_11 => 3_12",   
+					"isActive" : false,
+					"leftTop" : [0, 11],
+					"bottomRight" : [3, 12],
+					"leverCoordRelative" : [0,1],
+					"sonarObjects": []		
+				},
+                {
+					"id": 13,
+					"name" : "4_11 => 6_12",   
+					"isActive" : false,
+					"leftTop" : [4, 11],
+					"bottomRight" : [6, 12],
+					"leverCoordRelative" : [0,1],
+                    "sonarObjects": [
+						{"type": "zombie", "coords": [4.2, 11.2]},
+						{"type": "zombie", "coords": [4.8, 11.3]},
+                        {"type": "zombie", "coords": [5.5, 11.8]}
+					]			
+				},
+                {
+					"id": 14,
+					"name" : "7_11 => 9_12",   
+					"isActive" : false,
+					"leftTop" : [7, 11],
+					"bottomRight" : [9, 12],
+					"leverCoordRelative" : [0,1],
+					"sonarObjects": []		
+				},
+                {
+					"id": 15,
+					"name" : "fake room to make a wall on the left in coridor on video",   
+					"isActive" : false,
+					"leftTop" : [0, 9],
+					"bottomRight" : [-1, 10],
+					"leverCoordRelative" : null,
+					"sonarObjects": []		
+				},
+                {
+					"id": 16,
+					"name" : "fake room to make a wall on the right in coridor on video",   
+					"isActive" : false,
+					"leftTop" : [10, 9],
+					"bottomRight" : [9, 10],
+					"leverCoordRelative" : null,
+					"sonarObjects": []		
+				}                    
+                ],
+	"lighters": [{
+			"coords": [3, 1],
+            "isExit": false,
+			"desc": "lighter in first room (id = 1)",
+			"lightSpread": [{
+					"coords" : [3, 1],
+					"intensity" : 10
+				}, {
+					"coords" : [2, 1],
+					"intensity" : 7
+				}, {
+					"coords" : [2, 2],
+					"intensity" : 3
+				}, {
+					"coords" : [2, 3],
+					"intensity" : 1
+				}, {
+					"coords" : [4, 1],
+					"intensity" : 7 
+				}, {
+					"coords" : [5, 1],
+					"intensity" : 5
+				}, {
+					"coords" : [6, 1],
+					"intensity" : 2
+				}, {
+					"coords" : [5, 2],
+					"intensity" : 1
+				}
+			]
+		},
+        {
+			"coords": [2, 4],
+            "isExit": false,
+			"desc": "lighter with zombies (always on)",
+			"lightSpread": [{
+					"coords" : [2, 4],
+					"intensity" : 10
+				}, {
+					"coords" : [2, 5],
+					"intensity" : 7
+				}, {
+					"coords" : [2, 6],
+					"intensity" : 3
+				}, {
+					"coords" : [1, 6],
+					"intensity" : 1
+				}, {
+					"coords" : [2, 3],
+					"intensity" : 7 
+				}, {
+					"coords" : [2, 2],
+					"intensity" : 5
+				}, {
+					"coords" : [2, 1],
+					"intensity" : 3
+				}
+			]
+		},
+        {
+			"coords": [2, 6],
+            "isExit": false,
+			"desc": "lighter next to wrong way",
+			"lightSpread": [{
+					"coords" : [2, 6],
+					"intensity" : 10
+				}, {
+					"coords" : [2, 5],
+					"intensity" : 7
+				}, {
+					"coords" : [2, 4],
+					"intensity" : 3
+				}, {
+					"coords" : [2, 3],
+					"intensity" : 1
+				}, {
+					"coords" : [1, 6],
+					"intensity" : 7 
+				}, {
+					"coords" : [1, 7],
+					"intensity" : 3
+				}, {
+					"coords" : [1, 8],
+					"intensity" : 1
+				}
+			]
+		},
+        {
+			"coords": [2, 8],
+            "isExit": false,
+			"desc": "lighter where girl starts",
+			"lightSpread": [{
+					"coords" : [2, 8],
+					"intensity" : 10
+				}, {
+					"coords" : [3, 8],
+					"intensity" : 7
+				}, {
+					"coords" : [1, 8],
+					"intensity" : 7
+				}, {
+					"coords" : [1, 7],
+					"intensity" : 3
+				}, {
+					"coords" : [1, 6],
+					"intensity" : 1 
+				}, {
+					"coords" : [1, 9],
+					"intensity" : 3
+				}, {
+					"coords" : [1, 10],
+					"intensity" : 1
+				}
+			]
+		},
+        {
+			"coords": [2, 11],
+            "isExit": false,
+			"desc": "lighter on bottom left",
+			"lightSpread": [{
+					"coords" : [2, 11],
+					"intensity" : 10
+				}, {
+					"coords" : [1, 11],
+					"intensity" : 7
+				}, {
+					"coords" : [1, 10],
+					"intensity" : 5
+				}, {
+					"coords" : [1, 9],
+					"intensity" : 3
+				}, {
+					"coords" : [1, 8],
+					"intensity" : 1 
+				}, {
+					"coords" : [3, 11],
+					"intensity" : 7
+				}, {
+					"coords" : [4, 11],
+					"intensity" : 5
+				}, {
+					"coords" : [5, 11],
+					"intensity" : 3
+				}, {
+					"coords" : [6, 11],
+					"intensity" : 1
+				}
+			]
+		},
+        {
+			"coords": [5, 11],
+            "isExit": false,
+			"desc": "lighter on bottom center",
+			"lightSpread": [{
+					"coords" : [5, 11],
+					"intensity" : 10
+				}, {
+					"coords" : [4, 11],
+					"intensity" : 7
+				}, {
+					"coords" : [3, 11],
+					"intensity" : 5
+				}, {
+					"coords" : [2, 11],
+					"intensity" : 3
+				}, {
+					"coords" : [1, 11],
+					"intensity" : 1 
+				}, {
+					"coords" : [6, 11],
+					"intensity" : 7
+				}, {
+					"coords" : [7, 11],
+					"intensity" : 5
+				}, {
+					"coords" : [8, 11],
+					"intensity" : 3
+				}
+			]
+		},
+        {
+			"coords": [8, 11],
+            "isExit": false,
+			"desc": "lighter on bottom right",
+			"lightSpread": [{
+					"coords" : [8, 11],
+					"intensity" : 10
+				}, {
+					"coords" : [7, 11],
+					"intensity" : 7
+				}, {
+					"coords" : [6, 11],
+					"intensity" : 5
+				}, {
+					"coords" : [5, 11],
+					"intensity" : 3
+				}, {
+					"coords" : [4, 11],
+					"intensity" : 1 
+				}, {
+					"coords" : [8, 10],
+					"intensity" : 7
+				}, {
+					"coords" : [8, 9],
+					"intensity" : 5
+				}, {
+					"coords" : [8, 8],
+					"intensity" : 3
+				}, {
+					"coords" : [8, 7],
+					"intensity" : 1
+				}
+			]
+		},
+        {
+			"coords": [8, 8],
+            "isExit": false,
+			"desc": "lighter on left midddle",
+			"lightSpread": [{
+					"coords" : [8, 8],
+					"intensity" : 10
+				}, {
+					"coords" : [8, 9],
+					"intensity" : 7
+				}, {
+					"coords" : [8, 10],
+					"intensity" : 5
+				}, {
+					"coords" : [8, 11],
+					"intensity" : 3
+				}, {
+					"coords" : [8, 7],
+					"intensity" : 7 
+				}, {
+					"coords" : [8, 6],
+					"intensity" : 5
+				}, {
+					"coords" : [8, 5],
+					"intensity" : 3
+				}, {
+					"coords" : [8, 4],
+					"intensity" : 1
+				}, {
+					"coords" : [7, 6],
+					"intensity" : 2
+				}
+			]
+		},
+        {
+			"coords": [6, 6],
+            "isExit": false,
+			"desc": "lighter on bottom center",
+			"lightSpread": [{
+					"coords" : [6, 6],
+					"intensity" : 10
+				}, {
+					"coords" : [7, 6],
+					"intensity" : 7
+				}, {
+					"coords" : [8, 6],
+					"intensity" : 5
+				}, {
+					"coords" : [8, 7],
+					"intensity" : 1
+				}, {
+					"coords" : [8, 5],
+					"intensity" : 1 
+				}, {
+					"coords" : [5, 6],
+					"intensity" : 7
+				}, {
+					"coords" : [5, 5],
+					"intensity" : 3
+				}, {
+					"coords" : [5, 4],
+					"intensity" : 1
+				}
+			]
+		},
+        {
+			"coords": [5, 4],
+            "isExit": false,
+			"desc": "lighter always on",
+			"lightSpread": [{
+					"coords" : [5, 4],
+					"intensity" : 3
+				}, {
+					"coords" : [5, 5],
+					"intensity" : 2
+				}, {
+					"coords" : [5, 6],
+					"intensity" : 1
+				}, {
+					"coords" : [5, 3],
+					"intensity" : 2 
+				}, {
+					"coords" : [5, 2],
+					"intensity" : 1
+				}
+			]
+		},
+        {
+			"coords": [8, 3],
+            "isExit": false,
+			"desc": "lighter always on",
+			"lightSpread": [{
+					"coords" : [8, 3],
+					"intensity" : 7
+				}, {
+					"coords" : [8, 4],
+					"intensity" : 5
+				}, {
+					"coords" : [8, 5],
+					"intensity" : 3
+				}, {
+					"coords" : [8, 6],
+					"intensity" : 1
+				}, {
+					"coords" : [8, 2],
+					"intensity" : 5 
+				}, {
+					"coords" : [8, 1],
+					"intensity" : 3
+				}, {
+					"coords" : [7, 1],
+					"intensity" : 1
+				}
+			]
+		},
+        {
+			"coords": [8, 1],
+            "isExit": true,
+			"desc": "exit",
+			"lightSpread": [{
+					"coords" : [8, 1],
+					"intensity" : 7
+				}, {
+					"coords" : [8, 2],
+					"intensity" : 5
+				}, {
+					"coords" : [8, 3],
+					"intensity" : 1
+				}, {
+					"coords" : [7, 1],
+					"intensity" : 5
+				}, {
+					"coords" : [6, 1],
+					"intensity" : 3 
+				}
+			]
+		}
+        ]
+																	
+}

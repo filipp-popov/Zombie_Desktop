@@ -1,0 +1,13 @@
+﻿|Hey!
+
+<div ng-repeat="camera in cameras">
+<h1 > Camera {{camera.cam_id}}</h1>
+
+left_up_coords: {{camera.left_up_coords[0]}}, {{camera.left_up_coords[1]}} <br/ >
+right_down_coords: {{camera.right_down_coords[0]}}, {{camera.right_down_coords[1]}} <br/ >
+<h2>People tracked</h2>
+<div ng-repeat='man in camera.people'>
+coords: {{man.coords[0]}}, {{man.coords[1]}} <br />
+</div>
+<br/><br />
+</div>

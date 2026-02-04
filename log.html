@@ -1,0 +1,16 @@
+<html>
+	<body>
+		<h1>Log</h1>
+		<div id='content'></div>
+		<script src="https://code.jquery.com/jquery-2.1.3.min.js">
+</script>
+		<script>
+			$(function() { 
+				$.get( "log/getData", function( data ) { 
+					$( "#content" ).html( data ); 
+					}); 
+					});
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,15 @@
+{
+	"central_server_url": "",
+	"control_unit_url": "http://192.168.178.7:3000",
+	"areas": [
+		"zombie",
+		"alice"
+	],
+
+	"local_server_example_url": "http://127.0.0.1:5678",
+	"zombie": {
+		"strainValue": "B/H17-N9",
+		"password": "attack",
+		"planNumber": "D-14"
+	}
+}
