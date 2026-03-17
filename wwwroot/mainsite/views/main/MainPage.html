@@ -1,53 +1,53 @@
-<h1>Язык игры: {{gameState.zombie.game_language}}</h1>
-<h1> Режим игры: {{gameState.zombie.game_status}}</h1>
+<h1>Game language: {{gameState.zombie.game_language}}</h1>
+<h1> Game mode: {{gameState.zombie.game_status}}</h1>
 <br />
 <br />
-<h1> Пневмопочта</h1>
-Колба с правильным предметом находится в трубе: {{(gameState.zombie.key_air_tube_correct_input ? "ДА" : "НЕТ" )}} <br />
-Кнопка была нажата: {{(gameState.zombie.key_air_tube_button_pressed ? "ДА" : "НЕТ" )}} <br />
-Значение Корпус: {{gameState.zombie.key_air_tube_building_value}} <br />
-Значение Этаж : {{gameState.zombie.key_air_tube_floor_value}} <br />
-Значение Помещение : {{gameState.zombie.key_air_tube_room_value}} <br />
-Магнит на дверце для колбы: {{(gameState.zombie.key_air_tube_lock_on ? "ВКЛЮЧЕН": "ВЫКЛЮЧЕН")}} <br />
-Успешный исход: {{gameState.zombie.key_air_tube_completed ? "ДА": "НЕТ"}} <br />
-Правильный адресат, неправильный предмет: {{gameState.zombie.key_air_tube_wrong_item ? "ДА": "НЕТ"}} <br />
+<h1> Air Mail</h1>
+Correct item vial in tube: {{(gameState.zombie.key_air_tube_correct_input ? "YES" : "NO" )}} <br />
+Button pressed: {{(gameState.zombie.key_air_tube_button_pressed ? "YES" : "NO" )}} <br />
+Building value: {{gameState.zombie.key_air_tube_building_value}} <br />
+Floor value: {{gameState.zombie.key_air_tube_floor_value}} <br />
+Room value: {{gameState.zombie.key_air_tube_room_value}} <br />
+Vial door magnet: {{(gameState.zombie.key_air_tube_lock_on ? "ON": "OFF")}} <br />
+Success: {{gameState.zombie.key_air_tube_completed ? "YES": "NO"}} <br />
+Correct address, wrong item: {{gameState.zombie.key_air_tube_wrong_item ? "YES": "NO"}} <br />
 <br />
 <br />
-<h1> Автоклав</h1>
-Магниты на двери: {{(gameState.zombie.sterilizer_lock_on ? "ВКЛЮЧЕНЫ": "ВЫКЛЮЧЕНЫ")}} <br />
-Переключатель 1 состояние: {{gameState.zombie.sterilizer_switch_1_state}} <br />
-Переключатель 2 состояние: {{gameState.zombie.sterilizer_switch_2_state}} <br />
-Переключатель 3 состояние: {{gameState.zombie.sterilizer_switch_3_state}} <br />
-Переключатель 4 состояние: {{gameState.zombie.sterilizer_switch_4_state}} <br />
-Переключатель 5 состояние: {{gameState.zombie.sterilizer_switch_5_state}} <br />
-Панель 1 состояние: {{gameState.zombie.sterilizer_panel_1_state}} <br /> 
-Панель 2 состояние: {{gameState.zombie.sterilizer_panel_2_state}} <br /> 
-Панель 3 состояние: {{gameState.zombie.sterilizer_panel_3_state}} <br /> 
-Панель 4 состояние: {{gameState.zombie.sterilizer_panel_4_state}} <br /> 
-Панель 5 состояние: {{gameState.zombie.sterilizer_panel_5_state}} <br /> 
-Температура в автоклаве: {{gameState.zombie.sterilizer_panel_temperature}} <br /> 
-Максимальная температура достигнута: {{(gameState.zombie.sterilizer_max_temperature_reached ? "ДА" : "НЕТ" )}} <br />
-Автоклав завершен:  {{(gameState.zombie.sterilizer_completed ? "ДА" : "НЕТ" )}} <br />
+<h1> Autoclave</h1>
+Door magnets: {{(gameState.zombie.sterilizer_lock_on ? "ON": "OFF")}} <br />
+Switch 1 state: {{gameState.zombie.sterilizer_switch_1_state}} <br />
+Switch 2 state: {{gameState.zombie.sterilizer_switch_2_state}} <br />
+Switch 3 state: {{gameState.zombie.sterilizer_switch_3_state}} <br />
+Switch 4 state: {{gameState.zombie.sterilizer_switch_4_state}} <br />
+Switch 5 state: {{gameState.zombie.sterilizer_switch_5_state}} <br />
+Panel 1 state: {{gameState.zombie.sterilizer_panel_1_state}} <br /> 
+Panel 2 state: {{gameState.zombie.sterilizer_panel_2_state}} <br /> 
+Panel 3 state: {{gameState.zombie.sterilizer_panel_3_state}} <br /> 
+Panel 4 state: {{gameState.zombie.sterilizer_panel_4_state}} <br /> 
+Panel 5 state: {{gameState.zombie.sterilizer_panel_5_state}} <br /> 
+Autoclave temperature: {{gameState.zombie.sterilizer_panel_temperature}} <br /> 
+Max temperature reached: {{(gameState.zombie.sterilizer_max_temperature_reached ? "YES" : "NO" )}} <br />
+Autoclave completed:  {{(gameState.zombie.sterilizer_completed ? "YES" : "NO" )}} <br />
 <br />
 <br />
-<h1> Дверь в бункер</h1>
-Магниты на двери: {{(gameState.zombie.prison_lock_on ? "ВКЛЮЧЕНЫ": "ВЫКЛЮЧЕНЫ")}} <br />
-Активный алгоритм: {{gameState.zombie.prison_lock_active_algo_number}} <br />
-Номер завершенного маневра левого вентиля: {{gameState.zombie.prison_left_valve_succeeded_action_number}} <br />
-Номер завершенного маневра правого вентиля: {{gameState.zombie.prison_right_valve_succeeded_action_number}} <br />
-Прерывание успешной серии маневров: {{gameState.zombie.prison_correct_input}} <br />
-Успешное окончание задания: {{gameState.zombie.prison_correct_input}} <br />
+<h1> Bunker Door</h1>
+Door magnets: {{(gameState.zombie.prison_lock_on ? "ON": "OFF")}} <br />
+Active algorithm: {{gameState.zombie.prison_lock_active_algo_number}} <br />
+Left valve step completed: {{gameState.zombie.prison_left_valve_succeeded_action_number}} <br />
+Right valve step completed: {{gameState.zombie.prison_right_valve_succeeded_action_number}} <br />
+Successful sequence interrupted: {{gameState.zombie.prison_correct_input}} <br />
+Task completed: {{gameState.zombie.prison_correct_input}} <br />
 <br />
 <br />
-<h1> Освещение</h1>
-Главный свет: {{(gameState.zombie.main_light_on ? "ВКЛЮЧЕН": "ВЫКЛЮЧЕН")}} <br />
-Свет в тюрьме с зомби: {{(gameState.zombie.prison_light_on ? "ВКЛЮЧЕН": "ВЫКЛЮЧЕН")}} <br />
+<h1> Lighting</h1>
+Main light: {{(gameState.zombie.main_light_on ? "ON": "OFF")}} <br />
+Prison light: {{(gameState.zombie.prison_light_on ? "ON": "OFF")}} <br />
 <br />
 <br />
-<h1> Финальный ящик</h1>
-Считыватель на столе профессора: {{(gameState.zombie.final_box_card_active ? "ВКЛЮЧЕН": "ВЫКЛЮЧЕН")}} <br />
-Магнит на двери: {{(gameState.zombie.final_box_lock_on ? "ВКЛЮЧЕН": "ВЫКЛЮЧЕН")}} <br />
-Колба из автоклава стоит на своем месте: {{(gameState.zombie.final_box_reagent_placed ? "ДА": "НЕТ")}} <br />
-Колба из пневмопочты стоит на своем месте: {{(gameState.zombie.final_box_catalyst_placed ? "ДА": "НЕТ")}} <br />
-Процесс запущен: {{(gameState.zombie.final_box_in_progress ? "ДА": "НЕТ")}} <br />
-Задание завершено: {{(gameState.zombie.final_box_finished ? "ДА": "НЕТ")}} <br />
+<h1> Final Box</h1>
+Professor table reader: {{(gameState.zombie.final_box_card_active ? "ON": "OFF")}} <br />
+Door magnet: {{(gameState.zombie.final_box_lock_on ? "ON": "OFF")}} <br />
+Autoclave vial in place: {{(gameState.zombie.final_box_reagent_placed ? "YES": "NO")}} <br />
+Air mail vial in place: {{(gameState.zombie.final_box_catalyst_placed ? "YES": "NO")}} <br />
+Process started: {{(gameState.zombie.final_box_in_progress ? "YES": "NO")}} <br />
+Task completed: {{(gameState.zombie.final_box_finished ? "YES": "NO")}} <br />

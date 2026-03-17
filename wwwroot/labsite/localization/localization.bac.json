@@ -1,0 +1,122 @@
+{
+	"language": "de",
+	"emails": {
+		"algorythmChanged": {
+			"title": "Security algorythm changed",
+			"from": "Security system",
+			"to": "Laboratory personnel",
+			"bodyStrings": ["<h1 class='ui header'>New security access sequence"
+                        ,"<div class='sub header'>It is necessary to carry out simultaneous rotations in the following combinations</div></h1>"
+                        ,"<table class='ui definition table center aligned email-table'>"
+						,"<thead>"
+						, "<tr><th>", "", "</th><th>", "DOOR LEFT VALVE", "</th><th>", "DOOR RIGHT VALVE", "</th></tr>"
+						, "</thead>"
+						, "<tbody>"
+						, "<tr><td class='email-table-title'>", "STEP 1:", "</td><td>","<img src='img/{l0}.png'/>", "</td><td>", "<img src='img/{r0}.png'/>", "</td></tr>"
+						, "<tr><td class='email-table-title'>", "STEP 2:", "</td><td>","<img src='img/{l1}.png'/>", "</td><td>", "<img src='img/{r1}.png'/>", "</td></tr>"
+						, "<tr><td class='email-table-title'>", "STEP 3:", "</td><td>","<img src='img/{l2}.png'/>", "</td><td>", "<img src='img/{r2}.png'/>", "</td></tr>"
+						, "<tr><td class='email-table-title'>", "STEP 4:", "</td><td>","<img src='img/{l3}.png'/>", "</td><td>", "<img src='img/{r3}.png'/>", "</td></tr>"
+						, "<tr><td class='email-table-title'>", "STEP 5:", "</td><td>","<img src='img/{l4}.png'/>", "</td><td>", "<img src='img/{r4}.png'/>", "</td></tr>"
+						, "</tbody>"
+						, "</table>"]},
+						
+		"initialEmail": {
+			"title": "Re: Sterilizer settings",
+			"from": "Mark Spears",
+			"to": "Alex Schwartz",
+			"bodyStrings": ["Alex, I have configured sterilizer. <br /> <br />",
+						"Unfortunately it has not turned completely automated, will expose the temperature manually.",
+						"But at least there no risk to spoil reagent <br /><br />",
+						"And yes, congratulations on a breakthrough! I think after the vaccine synthesis, you have to buy a separate storage for all of your awards and medals.",
+						" <br /><br /><br /> With respect, Mark Spears"]},
+						
+		"initialSentEmail": {
+			"title": "Sterilizer settings",
+			"from": "Alex Schwartz",
+			"to": "Mark Spears",
+			"bodyStrings": ["Mark, I need you to set up a sterilizer on the boundary values, which lie on a common ftp to my folder named sterilizer.tx. <br />" ,
+						"I have to be absolutely sure that avoid any risk of damage to the reagent. Ideally, the sterilizer must itself exhibit the desired temperature and maintain it. ",
+						"The current system is a bit annoying, especially now that I am so close to the result.",
+						" <br /><br /><br /> Alex"]},
+						
+		"stopBothering": [
+			""
+		],
+		
+		"addresses":  ["Mark Spears &lt;mspears@lab.com&gt;", "TODO1 &lt;todo1@lab.com&gt;", "TODO2 &lt;todo2@lab.com&gt;", "TODO3 &lt;todo3@lab.com&gt;"]
+	},
+	"strings": {
+		"mark_name": "Mark Spears",
+		"vaccine_creation": "Vaccine creation",
+		"email": "Email",
+		"strain": "Strain",
+		"catalyst": "Catalyst",
+		"active_component": "Active component", 
+		"compose_email": "Compose message",
+		"inbox": "Inbox",
+		"email_from": "From",
+		"email_subject": "Subject",				
+		"email_date": "Date",		
+		"email_to": "To",	
+		"email_retention_policy": "Message earlier {0} were removed due to corporate security policy.",
+		"total_emails": "{0} emails total",
+        "professor_name": "Alex Schwartz",        
+		
+		"zcreation:load_components": "Load components",
+		"zcreation:identify_yourself": "Identify yourself",		
+		"zcreation:process_started": "Process started",	
+		"zcreation:enter_strain_tooltip": "Enter strain here",
+		"zcreation:check_strain": "Check",
+		"zcreation:strain_not_found": "Strain not found",
+		"zcreation:strain_loading": "Strain loading",
+		"zcreation:strain_loaded": "Strain loaded",
+		"zcreation:catalyst_not_found": "Catalyst is not found",
+		"zcreation:put_catalyst_into_box": "Please put the catalyst into the 'Catalist here' box",
+		"zcreation:catalyst_loaded": "Catalyst is successfully loaded",
+		"zcreation:active_component_not_found": "Active component is not found",
+		"zcreation:put_active_component_into_box": "Please put the active component into the 'Active component here' box",
+		"zcreation:active_component_loaded": "Active component is successfully loaded",
+		"zcreation:smart_card": "Smart Card",
+		"zcreation:please_scan_smart_card": "Please scan your smart card with 'Smart Cards' scanner",
+		"zcreation:create_vaccine": "Create vaccine",
+		"zcreation:strain_hint_header": "Subspecies  / Symptom - Mutation",
+
+		"login:login_caption": "Log-in to system",
+		"login:login": "Login",		
+        "login:error": "Incorrect password",
+		"login:login_tooltip": "Login",
+		"login:password_tooltip": "Password",
+"login:password_hint": "Kinder sind die Blumen des Lebens",
+        "login:stuff": "Staff",
+        "login:description": "Experimental research departmnent",
+		"login:new_user": "New user",
+
+		"sent_emails:caption": "Sent emails",
+		
+		"compose:email:caption": "Compose new message",
+		
+		"cameras:video_monitoring": "Video monitoring",
+		
+		"cameras:plans": "Plans",
+		
+		"plans:show_plan" : "Show Plan",
+		"plans:not_found": "Plan not found",
+		"plans:game_description": "Game mode of observation. Position the red dots may not coincide with the position of the players on the screen. You can turn on and off the light in the room and it will appear on the state of the game.",
+		"plans:header_plan": "Infection detector. Plan",
+		"plans:detector_active": "INFECTION DETECTOR IS ACTIVE",
+		"plans:not_infected_header": "UNINFECTED",
+		"plans:not_infected_description": "Do not become infected",
+		"plans:infected_header": "INFECTED",
+		"plans:infected_description": "Avoid direct contact! Individuals are aggressive, they are attracted to light and heat. The lack of stimuli behave passively.",
+		"plans:mutating_header": "MUTATING",
+		"plans:mutating_description": "The conversion does not occur immediately, the infected individual remains of the mind remain, but behave similarly infected - go to the light and warmth are trying to eat living flesh.",
+		"plans:died_header": "DEAD",
+		"plans:died_description": "DEAD or no signs of life",
+		"plans:detector_deactivated_header": "INFECTION DETECTOR IS DEACTIVATED",
+		"plans:detector_deactivated_description": "On this floor the equipment breaks down",
+
+        "girlEscape:maximumPowerSupply": "Maximum power supply reached!",
+        "girlEscape:roomsPowered": "Rooms powered",
+        "girlEscape:generator": "Electricity generator"
+	}
+}

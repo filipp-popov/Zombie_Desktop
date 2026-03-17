@@ -44,11 +44,12 @@ angular.module('myApp.adminZombie', ['ngRoute'])
       var gameFinishedTime = null;
       $scope.getTimeStampGameLength = function(timeStr) {
         var dt = new Date(Date.parse(timeStr));
-        if ($scope.gameState && $scope.gameState.zombie && $scope.gameState.zombie.final_box_in_progress && !gameFinishedTime) {
+        var gameStatus = $scope.gameState && $scope.gameState.zombie && $scope.gameState.zombie.game_status;
+        if (gameStatus !== 'game_started' && !gameFinishedTime) {
           gameFinishedTime = moment();
         }
 
-        if ($scope.gameState && $scope.gameState.zombie && !$scope.gameState.zombie.final_box_in_progress) {
+        if (gameStatus === 'game_started' && gameFinishedTime) {
           gameFinishedTime = null;
         }
 

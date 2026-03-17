@@ -1,26 +1,26 @@
-<h1>Личности</h1>
+<h1>Persons</h1>
 
-<button ng-click="saveToDisk(persons)"> Сохранить на диск </button>	
-<button ng-click="loadFromDisk()"> Загрузить с диска </button>	
+<button ng-click="saveToDisk(persons)"> Save to disk </button>	
+<button ng-click="loadFromDisk()"> Load from disk </button>	
 
 <br /> <br />
 <div ng-show="addNewVisible">
 	<input type="text" ng-model="newPerson.name" /> 
-	<button ng-click="savePerson(newPerson)">Сохранить</button>
+	<button ng-click="savePerson(newPerson)">Save</button>
 </div>
 
-<button ng-show="!addNewVisible" type="text" ng-click="addNewVisible = !addNewVisible">Добавить</button> 
-<button ng-show="addNewVisible" type="text" ng-click="addNewVisible = !addNewVisible">Отменить</button> 
+<button ng-show="!addNewVisible" type="text" ng-click="addNewVisible = !addNewVisible">Add</button> 
+<button ng-show="addNewVisible" type="text" ng-click="addNewVisible = !addNewVisible">Cancel</button> 
 
 <div ng-repeat="person in persons"> 
 	<fieldset>
 	<legend>
 			{{person.name}}
 	</legend>
-	<h3>Карточки (всего: {{person.cards.length}})</h3>
+	<h3>Cards (total: {{person.cards.length}})</h3>
 	<div editable-list="person.cards"></div>
 	
-	<h3>Браслеты (всего: {{person.bracers.length}})</h3>
+	<h3>Bracelets (total: {{person.bracers.length}})</h3>
 	<div editable-list="person.bracers"></div>	
 	</fieldset>
 </div>

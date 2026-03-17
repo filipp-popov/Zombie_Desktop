@@ -1,122 +1,122 @@
-<h1>Язык игры: {{gameState.alice.game_language}}</h1>
-<h1> Входная дверь </h1>
-Админ поднес карточку с RFID: {{gameState.alice.front_door_card_attempted_value}} <br />
-Игра началась: {{(gameState.alice.game_started ? "ДА" : "НЕТ" )}} <br />
-Входная дверь открыта: {{gameState.alice.front_door_lock_on}} <br />
+<h1>Game language: {{gameState.alice.game_language}}</h1>
+<h1> Entrance Door </h1>
+Admin scanned RFID card: {{gameState.alice.front_door_card_attempted_value}} <br />
+Game started: {{(gameState.alice.game_started ? "YES" : "NO" )}} <br />
+Entrance door open: {{gameState.alice.front_door_lock_on}} <br />
 <br />
 <br />
-<h1> Выходная дверь </h1>
-Выходная дверь открыта: {{(gameState.alice.exit_door_lock_on ? "ДА" : "НЕТ" )}} <br />
+<h1> Exit Door </h1>
+Exit door open: {{(gameState.alice.exit_door_lock_on ? "YES" : "NO" )}} <br />
 <br />
 <br />
-<h1> Стена с кроликами </h1>
-Ставни открыты: {{(gameState.alice.rabbits_shutter_lock_on ? "ДА" : "НЕТ" )}} <br />
-Перегородка открыта: {{gameState.alice.rabbits_partition_lock_on}} <br />
+<h1> Rabbits Wall </h1>
+Shutters open: {{(gameState.alice.rabbits_shutter_lock_on ? "YES" : "NO" )}} <br />
+Partition open: {{gameState.alice.rabbits_partition_lock_on}} <br />
 <br />
 <br />
-<h1> Маленькая дверца </h1>
-Маленькая дверца открыта: {{(gameState.alice.little_door_lock_on ? "ДА" : "НЕТ" )}} <br />
+<h1> Small Door </h1>
+Small door open: {{(gameState.alice.little_door_lock_on ? "YES" : "NO" )}} <br />
 <br />
 <br />
-<h1> Сервант </h1>
-Дверца серванта открыта: {{(gameState.alice.cupboard_door_lock_on ? "ДА" : "НЕТ" )}} <br />
+<h1> Cupboard </h1>
+Cupboard door open: {{(gameState.alice.cupboard_door_lock_on ? "YES" : "NO" )}} <br />
 <br />
 <br />
-<h1> Комод </h1>
-Комод состояние: {{gameState.alice.commode}} <br />
+<h1> Dresser </h1>
+Dresser state: {{gameState.alice.commode}} <br />
 <br />
 <br />
-<h1> Шкаф-дверь </h1>
-Левая дверца шкафа-двери открыта: {{(gameState.alice.passage_wardrobe_left_door_lock_on ? "ДА" : "НЕТ" )}} <br />
-Правая дверца шкафа-двери открыта: {{(gameState.alice.passage_wardrobe_right_door_lock_on ? "ДА" : "НЕТ" )}} <br />
+<h1> Wardrobe Door </h1>
+Left wardrobe door open: {{(gameState.alice.passage_wardrobe_left_door_lock_on ? "YES" : "NO" )}} <br />
+Right wardrobe door open: {{(gameState.alice.passage_wardrobe_right_door_lock_on ? "YES" : "NO" )}} <br />
 <br />
 <br />
-<h1> Королевская игра </h1>
-Подсказка 'Королевская_игра' воспроизведена: {{(gameState.alice.kings_game_intro_was_run ? "ДА" : "НЕТ" )}} <br />
-Аудиофайл 'Королева1' воспроизведен: {{(gameState.alice.kings_game_queen_speech1_was_run ? "ДА" : "НЕТ" )}} <br />
-Аудиофайл 'Королева2' воспроизведен: {{(gameState.alice.kings_game_queen_speech2_was_run ? "ДА" : "НЕТ" )}} <br />
-Все фигурки расставлены правильно: {{(gameState.alice.kings_game_figures_correct ? "ДА" : "НЕТ" )}} <br />
-Плаха фигурка поставлена верно: {{(gameState.alice.kings_game_scaffold_figure_correct ? "ДА" : "НЕТ" )}} <br />
-Плаха флаг поставлен верно: {{(gameState.alice.kings_game_scaffold_flag_correct ? "ДА" : "НЕТ" )}} <br />
-Виселица фигурка поставлена верно: {{(gameState.alice.kings_game_gallows_figure_correct ? "ДА" : "НЕТ" )}} <br />
-Виселица флаг поставлен верно: {{(gameState.alice.kings_game_gallows_flag_correct ? "ДА" : "НЕТ" )}} <br />
-Костер фигурка поставлена верно: {{(gameState.alice.kings_game_pyre_figure_correct ? "ДА" : "НЕТ" )}} <br />
-Костер  флаг поставлен верно: {{(gameState.alice.kings_game_pyre_flag_correct ? "ДА" : "НЕТ" )}} <br />
-Тюрьма фигурка поставлена верно: {{(gameState.alice.kings_game_prison_figure_correct ? "ДА" : "НЕТ" )}} <br />
-Тюрьма флаг поставлен верно: {{(gameState.alice.kings_game_prison_flag_correct ? "ДА" : "НЕТ" )}} <br />
+<h1> King's Game </h1>
+Hint 'King's Game' played: {{(gameState.alice.kings_game_intro_was_run ? "YES" : "NO" )}} <br />
+Audio file 'Queen1' played: {{(gameState.alice.kings_game_queen_speech1_was_run ? "YES" : "NO" )}} <br />
+Audio file 'Queen2' played: {{(gameState.alice.kings_game_queen_speech2_was_run ? "YES" : "NO" )}} <br />
+All figures placed correctly: {{(gameState.alice.kings_game_figures_correct ? "YES" : "NO" )}} <br />
+Scaffold figure placed correctly: {{(gameState.alice.kings_game_scaffold_figure_correct ? "YES" : "NO" )}} <br />
+Scaffold flag placed correctly: {{(gameState.alice.kings_game_scaffold_flag_correct ? "YES" : "NO" )}} <br />
+Gallows figure placed correctly: {{(gameState.alice.kings_game_gallows_figure_correct ? "YES" : "NO" )}} <br />
+Gallows flag placed correctly: {{(gameState.alice.kings_game_gallows_flag_correct ? "YES" : "NO" )}} <br />
+Pyre figure placed correctly: {{(gameState.alice.kings_game_pyre_figure_correct ? "YES" : "NO" )}} <br />
+Pyre flag placed correctly: {{(gameState.alice.kings_game_pyre_flag_correct ? "YES" : "NO" )}} <br />
+Prison figure placed correctly: {{(gameState.alice.kings_game_prison_figure_correct ? "YES" : "NO" )}} <br />
+Prison flag placed correctly: {{(gameState.alice.kings_game_prison_flag_correct ? "YES" : "NO" )}} <br />
 <br />
 <br />
-<h1> Шалтай </h1>
-Шалтай открыт: {{(gameState.alice.humpty_dumpty_lock_on ? "ДА" : "НЕТ" )}} <br />
-Левая рука Шалтая на месте: {{(gameState.alice.humpty_dumpty_left_arm_placed ? "ДА" : "НЕТ" )}} <br />
-Правая рука Шалтая на месте: {{(gameState.alice.humpty_dumpty_right_arm_placed ? "ДА" : "НЕТ" )}} <br />
-Левая нога Шалтая на месте: {{(gameState.alice.humpty_dumpty_left_leg_placed ? "ДА" : "НЕТ" )}} <br />
-Правая нога Шалтая на месте: {{(gameState.alice.humpty_dumpty_right_leg_placed ? "ДА" : "НЕТ" )}} <br />
+<h1> Humpty Dumpty </h1>
+Humpty open: {{(gameState.alice.humpty_dumpty_lock_on ? "YES" : "NO" )}} <br />
+Humpty left arm in place: {{(gameState.alice.humpty_dumpty_left_arm_placed ? "YES" : "NO" )}} <br />
+Humpty right arm in place: {{(gameState.alice.humpty_dumpty_right_arm_placed ? "YES" : "NO" )}} <br />
+Humpty left leg in place: {{(gameState.alice.humpty_dumpty_left_leg_placed ? "YES" : "NO" )}} <br />
+Humpty right leg in place: {{(gameState.alice.humpty_dumpty_right_leg_placed ? "YES" : "NO" )}} <br />
 <br />
 <br />
-<h1> Часы и циферблат </h1>
-Циферблат установлен: {{(gameState.alice.clock_face_installed ? "ДА" : "НЕТ" )}} <br />
+<h1> Clock and Dial </h1>
+Dial installed: {{(gameState.alice.clock_face_installed ? "YES" : "NO" )}} <br />
 <br />
 <br />
-<h1> Шкаф с чайником </h1>
-Замок на шкафу с чайником включен: {{(gameState.alice.locker_kettle_locked ? "ДА" : "НЕТ" )}} <br />
+<h1> Kettle Cabinet </h1>
+Kettle cabinet lock on: {{(gameState.alice.locker_kettle_locked ? "YES" : "NO" )}} <br />
 <br />
 <br />
-<h1> Телефон </h1>
-Телефон решен: {{(gameState.alice.phone_solved ? "ДА" : "НЕТ" )}} <br />
-Трубка на месте: {{(gameState.alice.phone_handset_down ? "ДА" : "НЕТ" )}} <br />
+<h1> Telephone </h1>
+Phone solved: {{(gameState.alice.phone_solved ? "YES" : "NO" )}} <br />
+Handset in place: {{(gameState.alice.phone_handset_down ? "YES" : "NO" )}} <br />
 <br />
 <br />
-<h1> Стол с чашками </h1>
-Стол с чашками решен: {{(gameState.alice.tea_time_solved ? "ДА" : "НЕТ" )}} <br />
-Замок на столе с чашками включен: {{(gameState.alice.tea_time_locked ? "ДА" : "НЕТ" )}} <br />
-Чайник на столе с чашками стоит на месте: {{(gameState.alice.tea_time_kettle_present ? "ДА" : "НЕТ" )}} <br />
-Готовность считать новую мастер-карту: {{(gameState.alice.tea_time_waiting_for_new_master ? "ДА" : "НЕТ" )}} <br />
-Чашка на 1 час установлена верно: {{(gameState.alice.tea_time_cup_1_correct ? "ДА" : "НЕТ" )}} <br />
-Чашка на 2 часа установлена верно: {{(gameState.alice.tea_time_cup_2_correct ? "ДА" : "НЕТ" )}} <br />
-Чашка на 3 часа установлена верно: {{(gameState.alice.tea_time_cup_3_correct ? "ДА" : "НЕТ" )}} <br />
-Чашка на 4 часа установлена верно: {{(gameState.alice.tea_time_cup_4_correct ? "ДА" : "НЕТ" )}} <br />
-Чашка на 5 часа установлена верно: {{(gameState.alice.tea_time_cup_5_correct ? "ДА" : "НЕТ" )}} <br />
-Чашка на 6 часов установлена верно: {{(gameState.alice.tea_time_cup_6_correct ? "ДА" : "НЕТ" )}} <br />
-Чашка на 7 часов установлена верно: {{(gameState.alice.tea_time_cup_7_correct ? "ДА" : "НЕТ" )}} <br />
-Чашка на 8 часов установлена верно: {{(gameState.alice.tea_time_cup_8_correct ? "ДА" : "НЕТ" )}} <br />
-Чашка на 9 часов установлена верно: {{(gameState.alice.tea_time_cup_9_correct ? "ДА" : "НЕТ" )}} <br />
-Чашка на 10 часов установлена верно: {{(gameState.alice.tea_time_cup_10_correct ? "ДА" : "НЕТ" )}} <br />
-Чашка на 11 часов установлена верно: {{(gameState.alice.tea_time_cup_11_correct ? "ДА" : "НЕТ" )}} <br />
+<h1> Tea Table </h1>
+Tea table solved: {{(gameState.alice.tea_time_solved ? "YES" : "NO" )}} <br />
+Tea table lock on: {{(gameState.alice.tea_time_locked ? "YES" : "NO" )}} <br />
+Kettle on tea table in place: {{(gameState.alice.tea_time_kettle_present ? "YES" : "NO" )}} <br />
+Ready to read new master card: {{(gameState.alice.tea_time_waiting_for_new_master ? "YES" : "NO" )}} <br />
+Cup at 1 o'clock correct: {{(gameState.alice.tea_time_cup_1_correct ? "YES" : "NO" )}} <br />
+Cup at 2 o'clock correct: {{(gameState.alice.tea_time_cup_2_correct ? "YES" : "NO" )}} <br />
+Cup at 3 o'clock correct: {{(gameState.alice.tea_time_cup_3_correct ? "YES" : "NO" )}} <br />
+Cup at 4 o'clock correct: {{(gameState.alice.tea_time_cup_4_correct ? "YES" : "NO" )}} <br />
+Cup at 5 o'clock correct: {{(gameState.alice.tea_time_cup_5_correct ? "YES" : "NO" )}} <br />
+Cup at 6 o'clock correct: {{(gameState.alice.tea_time_cup_6_correct ? "YES" : "NO" )}} <br />
+Cup at 7 o'clock correct: {{(gameState.alice.tea_time_cup_7_correct ? "YES" : "NO" )}} <br />
+Cup at 8 o'clock correct: {{(gameState.alice.tea_time_cup_8_correct ? "YES" : "NO" )}} <br />
+Cup at 9 o'clock correct: {{(gameState.alice.tea_time_cup_9_correct ? "YES" : "NO" )}} <br />
+Cup at 10 o'clock correct: {{(gameState.alice.tea_time_cup_10_correct ? "YES" : "NO" )}} <br />
+Cup at 11 o'clock correct: {{(gameState.alice.tea_time_cup_11_correct ? "YES" : "NO" )}} <br />
 <br />
 <br />
-<h1> Шахматный стол </h1>
-Замок в шахматном столе включен: {{(gameState.alice.chess_locked ? "ДА" : "НЕТ" )}} <br />
-Королева на своем месте: {{(gameState.alice.chess_queen_placed ? "ДА" : "НЕТ" )}} <br />
-Конь на своем месте: {{(gameState.alice.chess_knight_placed ? "ДА" : "НЕТ" )}} <br />
+<h1> Chess Table </h1>
+Chess table lock on: {{(gameState.alice.chess_locked ? "YES" : "NO" )}} <br />
+Queen in place: {{(gameState.alice.chess_queen_placed ? "YES" : "NO" )}} <br />
+Knight in place: {{(gameState.alice.chess_knight_placed ? "YES" : "NO" )}} <br />
 <br />
 <br />
-<h1> Розы </h1>
-Замок в розах включен: {{(gameState.alice.roses_locked ? "ДА" : "НЕТ" )}} <br />
-Роза по координатам 1:1 включена: {{(gameState.alice.rose_1_1_on ? "ДА" : "НЕТ" )}} <br />
-Роза по координатам 1:2 включена: {{(gameState.alice.rose_1_2_on ? "ДА" : "НЕТ" )}} <br />
-Роза по координатам 1:3 включена: {{(gameState.alice.rose_1_3_on ? "ДА" : "НЕТ" )}} <br />
-Роза по координатам 2:1 включена: {{(gameState.alice.rose_2_1_on ? "ДА" : "НЕТ" )}} <br />
-Роза по координатам 2:2 включена: {{(gameState.alice.rose_2_2_on ? "ДА" : "НЕТ" )}} <br />
-Роза по координатам 2:3 включена: {{(gameState.alice.rose_2_3_on ? "ДА" : "НЕТ" )}} <br />
-Роза по координатам 3:1 включена: {{(gameState.alice.rose_3_1_on ? "ДА" : "НЕТ" )}} <br />
-Роза по координатам 3:2 включена: {{(gameState.alice.rose_3_2_on ? "ДА" : "НЕТ" )}} <br />
-Роза по координатам 3:3 включена: {{(gameState.alice.rose_3_3_on ? "ДА" : "НЕТ" )}} <br />
+<h1> Roses </h1>
+Roses lock on: {{(gameState.alice.roses_locked ? "YES" : "NO" )}} <br />
+Rose at 1:1 on: {{(gameState.alice.rose_1_1_on ? "YES" : "NO" )}} <br />
+Rose at 1:2 on: {{(gameState.alice.rose_1_2_on ? "YES" : "NO" )}} <br />
+Rose at 1:3 on: {{(gameState.alice.rose_1_3_on ? "YES" : "NO" )}} <br />
+Rose at 2:1 on: {{(gameState.alice.rose_2_1_on ? "YES" : "NO" )}} <br />
+Rose at 2:2 on: {{(gameState.alice.rose_2_2_on ? "YES" : "NO" )}} <br />
+Rose at 2:3 on: {{(gameState.alice.rose_2_3_on ? "YES" : "NO" )}} <br />
+Rose at 3:1 on: {{(gameState.alice.rose_3_1_on ? "YES" : "NO" )}} <br />
+Rose at 3:2 on: {{(gameState.alice.rose_3_2_on ? "YES" : "NO" )}} <br />
+Rose at 3:3 on: {{(gameState.alice.rose_3_3_on ? "YES" : "NO" )}} <br />
 <br />
 <br />
-<h1> Лабиринт </h1>
-Замок в лабиринте включен: {{(gameState.alice.maze_locked ? "ДА" : "НЕТ" )}} <br />
-Кнопка в лабиринте нажата: {{(gameState.alice.maze_button_pressed ? "ДА" : "НЕТ" )}} <br />
+<h1> Maze </h1>
+Maze lock on: {{(gameState.alice.maze_locked ? "YES" : "NO" )}} <br />
+Maze button pressed: {{(gameState.alice.maze_button_pressed ? "YES" : "NO" )}} <br />
 <br />
 <br />
-<h1> Бесконечный шкаф </h1>
-Бесконечный шкаф. Первый шкаф открыт: {{(gameState.alice.infinite_locker_1_locked ? "ДА" : "НЕТ" )}} <br />
-Бесконечный шкаф. Второй шкаф открыт: {{(gameState.alice.infinite_locker_2_locked ? "ДА" : "НЕТ" )}} <br />
-Бесконечный шкаф. Третий шкаф открыт: {{(gameState.alice.infinite_locker_3_locked ? "ДА" : "НЕТ" )}} <br />
+<h1> Infinite Wardrobe </h1>
+Infinite wardrobe. First wardrobe open: {{(gameState.alice.infinite_locker_1_locked ? "YES" : "NO" )}} <br />
+Infinite wardrobe. Second wardrobe open: {{(gameState.alice.infinite_locker_2_locked ? "YES" : "NO" )}} <br />
+Infinite wardrobe. Third wardrobe open: {{(gameState.alice.infinite_locker_3_locked ? "YES" : "NO" )}} <br />
 <br />
 <br />
-<h1> Ворот и стрелки </h1>
-Ворот пройден: {{(gameState.alice.winch_completed ? "ДА" : "НЕТ" )}} <br />
-Количество пройденных оборотов: {{gameState.alice.winch_turn_count}} <br />
+<h1> Winch and Arrows </h1>
+Winch completed: {{(gameState.alice.winch_completed ? "YES" : "NO" )}} <br />
+Number of completed turns: {{gameState.alice.winch_turn_count}} <br />
 <br />
 <br />

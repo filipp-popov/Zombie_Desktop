@@ -80,7 +80,7 @@
                       ],
                       localizations: [
                         '$http', '$q', function($http, $q) {
-                          return $q.all(['ru', 'en', 'es'].map(function(lang) {
+                          return $q.all(['ru', 'en', 'de'].map(function(lang) {
                             return $http.get('localization/localization.' + lang + '.json') 
                           })).then(function(results){
                             var localizations = {};

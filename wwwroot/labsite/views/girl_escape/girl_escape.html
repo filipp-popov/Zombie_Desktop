@@ -18,7 +18,7 @@
 </div>
 <div class="ui bottom attached tab segment active plan-floor" data-tab="second" style="min-height: 800px;">
     <div class="ui fluid big action input" ng-if="!isObserver">
-        <input type="text" placeholder="Введите номер этажа..." ng-model="planNumber" ng-keyup="$event.keyCode === 13 && ctrl.showPlan(planNumber)">
+        <input type="text" placeholder="{{'plans:enter_floor_placeholder' | localized}}" ng-model="planNumber" ng-keyup="$event.keyCode === 13 && ctrl.showPlan(planNumber)">
         <div class="ui button" ng-click="ctrl.showPlan(planNumber)">{{'plans:show_plan' | localized}}</div>
         <br/>
     </div>

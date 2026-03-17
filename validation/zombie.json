@@ -487,13 +487,13 @@
                 "description": "Выключить / перезагрузить головную плату"
             },
             "game_language": {
-                "default_value": "ru",
+                "default_value": "de",
                 "type": "predefined",
                 "possible_values": [
+                    "de",
                     "en",
-                    "ru",
-                    "es",
-					"de"
+                    "ru"
+			
                 ],
                 "can_send_to_control_unit": true,
                 "description": "Сменить язык игры"

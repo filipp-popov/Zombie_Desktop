@@ -33,6 +33,9 @@ angular.module('myApp', [
             }
         };
 
+        // Default localization before any state updates arrive
+        $rootScope.localization = localizations.en || localizations.ru;
+
         var isUpdateInProgress = false;
         $rootScope.$watchGroup(['isLoggedIn', 'game_started'], function (newValues) {
             if ($location.path() === '/girl_escape_observer') {
@@ -94,8 +97,9 @@ angular.module('myApp', [
 
         $rootScope.$on('stateUpdated', function (evnt, eventObj) {
             if (eventObj.area === 'zombie' && eventObj.state) {
-                if (eventObj.state.game_language !== ($rootScope.localization || {}).language) {
-                    $rootScope.localization = localizations[eventObj.state.game_language];
+                var nextLocalization = localizations[eventObj.state.game_language] || localizations.en || localizations.ru;
+                if (nextLocalization && nextLocalization.language !== ($rootScope.localization || {}).language) {
+                    $rootScope.localization = nextLocalization;
                     $route.reload();
                 }
 

@@ -5,8 +5,8 @@
 
 <div ng-show="addNewVisible">
 	<input type="text" ng-model="newValue" /> 
-	<button ng-click="addValue(newValue)">Сохранить</button>
+	<button ng-click="addValue(newValue)">Save</button>
 </div>
 
-<button ng-show="!addNewVisible" type="text" ng-click="addNewVisible = !addNewVisible">Добавить</button> 
-<button ng-show="addNewVisible" type="text" ng-click="addNewVisible = !addNewVisible">Отмена</button> 
+<button ng-show="!addNewVisible" type="text" ng-click="addNewVisible = !addNewVisible">Add</button> 
+<button ng-show="addNewVisible" type="text" ng-click="addNewVisible = !addNewVisible">Cancel</button> 
